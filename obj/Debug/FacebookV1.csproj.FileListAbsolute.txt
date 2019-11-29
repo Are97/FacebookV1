@@ -1,0 +1,10 @@
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\bin\Debug\FacebookV1.exe.config
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\bin\Debug\FacebookV1.exe
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\bin\Debug\FacebookV1.pdb
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.csprojAssemblyReference.cache
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.Properties.Resources.resources
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.csproj.GenerateResource.cache
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.csproj.CoreCompileInputs.cache
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.exe
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.pdb
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.Form1.resources
