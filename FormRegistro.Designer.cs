@@ -34,6 +34,11 @@
             this.textBoxCorreo = new System.Windows.Forms.TextBox();
             this.textBoxContraseñaN = new System.Windows.Forms.TextBox();
             this.buttonRegistrate = new System.Windows.Forms.Button();
+            this.radioButtonMujer = new System.Windows.Forms.RadioButton();
+            this.radioButtonHombre = new System.Windows.Forms.RadioButton();
+            this.comboBoxDia = new System.Windows.Forms.ComboBox();
+            this.comboBoxMes = new System.Windows.Forms.ComboBox();
+            this.comboBoxAño = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBoxCorreoIS
@@ -108,12 +113,80 @@
             this.buttonRegistrate.UseVisualStyleBackColor = true;
             this.buttonRegistrate.Click += new System.EventHandler(this.buttonRegistrate_Click);
             // 
+            // radioButtonMujer
+            // 
+            this.radioButtonMujer.AutoSize = true;
+            this.radioButtonMujer.BackColor = System.Drawing.Color.White;
+            this.radioButtonMujer.Location = new System.Drawing.Point(89, 358);
+            this.radioButtonMujer.Name = "radioButtonMujer";
+            this.radioButtonMujer.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMujer.TabIndex = 7;
+            this.radioButtonMujer.TabStop = true;
+            this.radioButtonMujer.UseVisualStyleBackColor = false;
+            this.radioButtonMujer.Click += new System.EventHandler(this.radioButtonMujer_Click);
+            // 
+            // radioButtonHombre
+            // 
+            this.radioButtonHombre.AutoSize = true;
+            this.radioButtonHombre.BackColor = System.Drawing.Color.White;
+            this.radioButtonHombre.Location = new System.Drawing.Point(218, 358);
+            this.radioButtonHombre.Name = "radioButtonHombre";
+            this.radioButtonHombre.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonHombre.TabIndex = 8;
+            this.radioButtonHombre.TabStop = true;
+            this.radioButtonHombre.UseVisualStyleBackColor = false;
+            this.radioButtonHombre.Click += new System.EventHandler(this.radioButtonHombre_Click);
+            // 
+            // comboBoxDia
+            // 
+            this.comboBoxDia.BackColor = System.Drawing.Color.White;
+            this.comboBoxDia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxDia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDia.FormattingEnabled = true;
+            this.comboBoxDia.IntegralHeight = false;
+            this.comboBoxDia.ItemHeight = 21;
+            this.comboBoxDia.Location = new System.Drawing.Point(23, 280);
+            this.comboBoxDia.Name = "comboBoxDia";
+            this.comboBoxDia.Size = new System.Drawing.Size(111, 29);
+            this.comboBoxDia.TabIndex = 9;
+            // 
+            // comboBoxMes
+            // 
+            this.comboBoxMes.BackColor = System.Drawing.Color.White;
+            this.comboBoxMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxMes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMes.FormattingEnabled = true;
+            this.comboBoxMes.IntegralHeight = false;
+            this.comboBoxMes.ItemHeight = 21;
+            this.comboBoxMes.Location = new System.Drawing.Point(159, 279);
+            this.comboBoxMes.Name = "comboBoxMes";
+            this.comboBoxMes.Size = new System.Drawing.Size(111, 29);
+            this.comboBoxMes.TabIndex = 10;
+            // 
+            // comboBoxAño
+            // 
+            this.comboBoxAño.BackColor = System.Drawing.Color.White;
+            this.comboBoxAño.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxAño.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAño.FormattingEnabled = true;
+            this.comboBoxAño.IntegralHeight = false;
+            this.comboBoxAño.ItemHeight = 21;
+            this.comboBoxAño.Location = new System.Drawing.Point(297, 279);
+            this.comboBoxAño.Name = "comboBoxAño";
+            this.comboBoxAño.Size = new System.Drawing.Size(111, 29);
+            this.comboBoxAño.TabIndex = 11;
+            // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FacebookV1.Properties.Resources.Registro;
             this.ClientSize = new System.Drawing.Size(421, 514);
+            this.Controls.Add(this.comboBoxAño);
+            this.Controls.Add(this.comboBoxMes);
+            this.Controls.Add(this.comboBoxDia);
+            this.Controls.Add(this.radioButtonHombre);
+            this.Controls.Add(this.radioButtonMujer);
             this.Controls.Add(this.buttonRegistrate);
             this.Controls.Add(this.textBoxContraseñaN);
             this.Controls.Add(this.textBoxCorreo);
@@ -137,5 +210,10 @@
         private System.Windows.Forms.TextBox textBoxCorreo;
         private System.Windows.Forms.TextBox textBoxContraseñaN;
         private System.Windows.Forms.Button buttonRegistrate;
+        private System.Windows.Forms.RadioButton radioButtonMujer;
+        private System.Windows.Forms.RadioButton radioButtonHombre;
+        private System.Windows.Forms.ComboBox comboBoxDia;
+        private System.Windows.Forms.ComboBox comboBoxMes;
+        private System.Windows.Forms.ComboBox comboBoxAño;
     }
 }
