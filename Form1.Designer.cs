@@ -53,7 +53,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(1358, 717);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(10, 20);
+            this.textBox1.Size = new System.Drawing.Size(10, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.Visible = false;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -70,6 +70,7 @@
             this.textBoxContraseñaIS.TabIndex = 2;
             this.textBoxContraseñaIS.Text = "Contraseña";
             this.textBoxContraseñaIS.Click += new System.EventHandler(this.textBoxContraseñaIS_Click);
+            this.textBoxContraseñaIS.TabIndexChanged += new System.EventHandler(this.textBoxContraseñaIS_TabIndexChanged);
             // 
             // buttonIS
             // 
@@ -118,9 +119,10 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBoxCorreoIS);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Facebook";
+            this.Text = " Facebook - Inicia sesión o regístrate";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

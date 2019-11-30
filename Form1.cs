@@ -31,6 +31,9 @@ namespace FacebookV1
         private void buttonIS_MouseEnter(object sender, EventArgs e)
         {
         }
+        private void textBoxContraseñaIS_TabIndexChanged(object sender, EventArgs e)
+        {
+        }
         //****************************** FIN BASURA ********************//
 
         private void textBoxCorreoIS_Click(object sender, EventArgs e)
@@ -59,7 +62,10 @@ namespace FacebookV1
 
         private void buttonCuentaN_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cuenta Nueva");
+            FormRegistro fr = new FormRegistro();
+            fr.Show();
         }
+
+        
     }
 }
