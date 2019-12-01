@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FacebookV1
 {
@@ -57,8 +58,49 @@ namespace FacebookV1
 
         private void buttonIS_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Iniciar Sesion");
+            string connectionString;
+            connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            ReadOrderData(connectionString);
+            
         }
+        private void ReadOrderData(string connectionString)
+        {    
+            string queryString =
+                "select contras from persona where correo = '"+textBoxCorreoIS.Text+"'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+                if (command.ExecuteScalar() != null)
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ReadSingleRow((IDataRecord)reader);
+                    }
+                    reader.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Contraseña Incorrectos");
+                }
+                
+            }
+        }
+        private void ReadSingleRow(IDataRecord record)
+        {
+            
+            if (String.Format("{0}", record[0]) == textBoxContraseñaIS.Text)
+            {
+                MessageBox.Show(String.Format("{0}", record[0]));
+            }
+            else {
+                MessageBox.Show("Usuario o Contraseña Incorrectos");
+            }
+                
+        }
+      
 
         private void buttonCuentaN_Click(object sender, EventArgs e)
         {
