@@ -60,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLConnection\Amigo.cs" />
+    <Compile Include="SQLConnection\PersonaDataService.cs" />
+    <Compile Include="SQLConnection\SqlClient.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +98,7 @@
   <ItemGroup>
     <Content Include="Imgs\Icon.ico" />
     <Content Include="Imgs\Registro.png" />
+    <Content Include="SQLConnection\Init.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

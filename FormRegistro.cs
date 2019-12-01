@@ -1,4 +1,5 @@
-﻿using System;
+﻿//using FacebookV1.SQLConnection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FacebookV1
 {
     public partial class FormRegistro : Form
     {
+
         public FormRegistro()
         {
             InitializeComponent();
@@ -62,7 +65,27 @@ namespace FacebookV1
 
         private void buttonRegistrate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Registrate");
+            UseWaitCursor = true;
+            //Una conexion a BD un poco mala...
+            string connectionString;
+            SqlConnection cnn;
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql = "";
+            sql =
+                "insert into persona values ('" + textBoxCorreoIS.Text + "','" + textBoxApellido.Text + "','" + textBoxCorreo.Text + "','" + textBoxContraseñaN.Text + "'," + comboBoxDia.Text + ",'" + comboBoxMes.Text + "'," + comboBoxAño.Text + "," + (radioButtonMujer.Checked ? 0 : 1) + ")";
+                
+            connectionString = connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            command = new SqlCommand(sql, cnn);
+            adapter.InsertCommand = new SqlCommand(sql, cnn);
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+            cnn.Close();
+            UseWaitCursor = false;
+            MessageBox.Show("Registro Correcto");
+            this.Close();
         }
 
         private void radioButtonHombre_Click(object sender, EventArgs e)
