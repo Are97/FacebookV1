@@ -9,3 +9,4 @@ C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\D
 C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.pdb
 C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.Form1.resources
 C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.FormRegistro.resources
+C:\Users\pablo\Documents\Visual Studio 2017\Projects\FacebookV1\FacebookV1\obj\Debug\FacebookV1.FormPagPrincipal.resources

@@ -58,15 +58,16 @@ namespace FacebookV1
 
         private void buttonIS_Click(object sender, EventArgs e)
         {
+            UseWaitCursor = true;
             string connectionString;
             connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             ReadOrderData(connectionString);
-            
+            UseWaitCursor = false;
         }
         private void ReadOrderData(string connectionString)
         {    
             string queryString =
-                "select contras from persona where correo = '"+textBoxCorreoIS.Text+"'";
+                "select contras, idpersona, nombre from persona where correo = '"+textBoxCorreoIS.Text+"'";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -93,7 +94,9 @@ namespace FacebookV1
             
             if (String.Format("{0}", record[0]) == textBoxContraseñaIS.Text)
             {
-                MessageBox.Show(String.Format("{0}", record[0]));
+                FormPagPrincipal fpp = new FormPagPrincipal(String.Format("{0}", record[1]), String.Format("{0}", record[2]));
+                this.Hide();
+                fpp.Show();
             }
             else {
                 MessageBox.Show("Usuario o Contraseña Incorrectos");
