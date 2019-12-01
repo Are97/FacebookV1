@@ -67,7 +67,7 @@ namespace FacebookV1
         private void ReadOrderData(string connectionString)
         {    
             string queryString =
-                "select contras, idpersona, nombre from persona where correo = '"+textBoxCorreoIS.Text+"'";
+                "select contras, idpersona, nombre, correo from persona where correo = '"+textBoxCorreoIS.Text+"'";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -94,7 +94,7 @@ namespace FacebookV1
             
             if (String.Format("{0}", record[0]) == textBoxContraseñaIS.Text)
             {
-                FormPagPrincipal fpp = new FormPagPrincipal(String.Format("{0}", record[1]), String.Format("{0}", record[2]));
+                FormPagPrincipal fpp = new FormPagPrincipal(String.Format("{0}", record[1]), String.Format("{0}", record[2]), String.Format("{0}", record[3]), String.Format("{0}", record[0]));
                 this.Hide();
                 fpp.Show();
             }

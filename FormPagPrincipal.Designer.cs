@@ -35,6 +35,14 @@
             this.buttonPerfil = new System.Windows.Forms.Button();
             this.buttonIr = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
+            this.pictureBoxModificar = new System.Windows.Forms.PictureBox();
+            this.buttonAceptar = new System.Windows.Forms.Button();
+            this.textBoxNombreModificar = new System.Windows.Forms.TextBox();
+            this.textBoxCorreoModificar = new System.Windows.Forms.TextBox();
+            this.textBoxContraseñaModificar = new System.Windows.Forms.TextBox();
+            this.textBoxContraseñaNuevaModificar = new System.Windows.Forms.TextBox();
+            this.textBoxContraseñaConfModificar = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxBuscar
@@ -137,12 +145,121 @@
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
+            // pictureBoxModificar
+            // 
+            this.pictureBoxModificar.BackgroundImage = global::FacebookV1.Properties.Resources.config;
+            this.pictureBoxModificar.InitialImage = global::FacebookV1.Properties.Resources.config;
+            this.pictureBoxModificar.Location = new System.Drawing.Point(110, 57);
+            this.pictureBoxModificar.Name = "pictureBoxModificar";
+            this.pictureBoxModificar.Size = new System.Drawing.Size(451, 291);
+            this.pictureBoxModificar.TabIndex = 15;
+            this.pictureBoxModificar.TabStop = false;
+            this.pictureBoxModificar.Visible = false;
+            // 
+            // buttonAceptar
+            // 
+            this.buttonAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAceptar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAceptar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAceptar.FlatAppearance.BorderSize = 0;
+            this.buttonAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAceptar.Image = global::FacebookV1.Properties.Resources.Aceptar;
+            this.buttonAceptar.Location = new System.Drawing.Point(273, 300);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(144, 38);
+            this.buttonAceptar.TabIndex = 16;
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Visible = false;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
+            // 
+            // textBoxNombreModificar
+            // 
+            this.textBoxNombreModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxNombreModificar.BackColor = System.Drawing.Color.White;
+            this.textBoxNombreModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNombreModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNombreModificar.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxNombreModificar.Location = new System.Drawing.Point(273, 111);
+            this.textBoxNombreModificar.Name = "textBoxNombreModificar";
+            this.textBoxNombreModificar.Size = new System.Drawing.Size(258, 16);
+            this.textBoxNombreModificar.TabIndex = 17;
+            this.textBoxNombreModificar.Text = "Nombre";
+            this.textBoxNombreModificar.Visible = false;
+            // 
+            // textBoxCorreoModificar
+            // 
+            this.textBoxCorreoModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxCorreoModificar.BackColor = System.Drawing.Color.White;
+            this.textBoxCorreoModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCorreoModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCorreoModificar.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxCorreoModificar.Location = new System.Drawing.Point(273, 144);
+            this.textBoxCorreoModificar.Name = "textBoxCorreoModificar";
+            this.textBoxCorreoModificar.Size = new System.Drawing.Size(258, 16);
+            this.textBoxCorreoModificar.TabIndex = 18;
+            this.textBoxCorreoModificar.Text = "Correo";
+            this.textBoxCorreoModificar.Visible = false;
+            // 
+            // textBoxContraseñaModificar
+            // 
+            this.textBoxContraseñaModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxContraseñaModificar.BackColor = System.Drawing.Color.White;
+            this.textBoxContraseñaModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxContraseñaModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxContraseñaModificar.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxContraseñaModificar.Location = new System.Drawing.Point(273, 176);
+            this.textBoxContraseñaModificar.Name = "textBoxContraseñaModificar";
+            this.textBoxContraseñaModificar.Size = new System.Drawing.Size(258, 16);
+            this.textBoxContraseñaModificar.TabIndex = 19;
+            this.textBoxContraseñaModificar.Text = "Contraseña";
+            this.textBoxContraseñaModificar.Visible = false;
+            this.textBoxContraseñaModificar.Click += new System.EventHandler(this.textBoxContraseñaModificar_Click);
+            // 
+            // textBoxContraseñaNuevaModificar
+            // 
+            this.textBoxContraseñaNuevaModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxContraseñaNuevaModificar.BackColor = System.Drawing.Color.White;
+            this.textBoxContraseñaNuevaModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxContraseñaNuevaModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxContraseñaNuevaModificar.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxContraseñaNuevaModificar.Location = new System.Drawing.Point(273, 214);
+            this.textBoxContraseñaNuevaModificar.Name = "textBoxContraseñaNuevaModificar";
+            this.textBoxContraseñaNuevaModificar.Size = new System.Drawing.Size(258, 16);
+            this.textBoxContraseñaNuevaModificar.TabIndex = 20;
+            this.textBoxContraseñaNuevaModificar.Text = "Contraseña";
+            this.textBoxContraseñaNuevaModificar.Visible = false;
+            this.textBoxContraseñaNuevaModificar.Click += new System.EventHandler(this.textBoxContraseñaNuevaModificar_Click);
+            // 
+            // textBoxContraseñaConfModificar
+            // 
+            this.textBoxContraseñaConfModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxContraseñaConfModificar.BackColor = System.Drawing.Color.White;
+            this.textBoxContraseñaConfModificar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxContraseñaConfModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxContraseñaConfModificar.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxContraseñaConfModificar.Location = new System.Drawing.Point(273, 261);
+            this.textBoxContraseñaConfModificar.Name = "textBoxContraseñaConfModificar";
+            this.textBoxContraseñaConfModificar.Size = new System.Drawing.Size(258, 16);
+            this.textBoxContraseñaConfModificar.TabIndex = 21;
+            this.textBoxContraseñaConfModificar.Text = "Contraseña";
+            this.textBoxContraseñaConfModificar.Visible = false;
+            this.textBoxContraseñaConfModificar.Click += new System.EventHandler(this.textBoxContraseñaConfModificar_Click);
+            // 
             // FormPagPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FacebookV1.Properties.Resources.Timeline;
             this.ClientSize = new System.Drawing.Size(685, 736);
+            this.Controls.Add(this.textBoxContraseñaConfModificar);
+            this.Controls.Add(this.textBoxContraseñaNuevaModificar);
+            this.Controls.Add(this.textBoxContraseñaModificar);
+            this.Controls.Add(this.textBoxCorreoModificar);
+            this.Controls.Add(this.textBoxNombreModificar);
+            this.Controls.Add(this.buttonAceptar);
+            this.Controls.Add(this.pictureBoxModificar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonIr);
             this.Controls.Add(this.buttonPerfil);
@@ -152,6 +269,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPagPrincipal";
             this.Text = " Facebook";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +283,12 @@
         private System.Windows.Forms.Button buttonPerfil;
         private System.Windows.Forms.Button buttonIr;
         private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.PictureBox pictureBoxModificar;
+        private System.Windows.Forms.Button buttonAceptar;
+        private System.Windows.Forms.TextBox textBoxNombreModificar;
+        private System.Windows.Forms.TextBox textBoxCorreoModificar;
+        private System.Windows.Forms.TextBox textBoxContraseñaModificar;
+        private System.Windows.Forms.TextBox textBoxContraseñaNuevaModificar;
+        private System.Windows.Forms.TextBox textBoxContraseñaConfModificar;
     }
 }
