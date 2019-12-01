@@ -7,21 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using FacebookV1.SQLConnection;
 
 namespace FacebookV1
 {
     public partial class FormPagPrincipal : Form
     {
         private string contra = "";
-        public FormPagPrincipal(string idpersona, string nombre, string correo, string _contra)
+        public string idpersona = "";
+        public string nombre = "";
+        public string correo = "";
+        private static DataService _service;
+
+        public FormPagPrincipal(string _idpersona, string _nombre, string _correo, string _contra)
         {
             InitializeComponent();
-            buttonPerfil.Text = nombre;
+            var connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ToString();
+            _service = new DataService(connectionString);
+            buttonPerfil.Text = _nombre;
             List<string> opciones = new List<string>() { "Opciones","Inicio", "Perfil", "Buscar amigos","Modificar perfil" };
             comboBoxOpciones.DataSource = opciones;
-            textBoxNombreModificar.Text = nombre;
-            textBoxCorreoModificar.Text = correo;
+            textBoxNombreModificar.Text = _nombre;
+            textBoxCorreoModificar.Text = _correo;
             contra = _contra;
+            idpersona = _idpersona;
+            nombre = _nombre;
+            correo = _correo;
         }
 
         private void textBoxBuscar_Click(object sender, EventArgs e)
@@ -71,6 +83,9 @@ namespace FacebookV1
                     textBoxContraseñaConfModificar.BringToFront();
                     buttonAceptar.Visible = true;
                     buttonAceptar.BringToFront();
+                    radioButtonCambiarContraseña.Visible = true;
+                    radioButtonCambiarContraseña.BringToFront();
+
                     break;
                 default:
                     MessageBox.Show(comboBoxOpciones.Text);
@@ -114,6 +129,16 @@ namespace FacebookV1
             if(textBoxContraseñaModificar.Text == contra && textBoxContraseñaNuevaModificar.Text == textBoxContraseñaConfModificar.Text)
             {
                 MessageBox.Show("Se cambiara la contra");
+                
+               // _service.UpdatePerfil(idpersona, nombre, correo, contra);
+                if (_service.UpdatePerfil(idpersona, nombre, correo, contra))
+                {
+                    MessageBox.Show("True");
+                }
+                else
+                {
+                    MessageBox.Show("false");
+                }
             }
             else
             {

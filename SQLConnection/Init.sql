@@ -46,3 +46,33 @@ begin catch
 end catch
 go
 
+create procedure UpdatePerfil
+(
+	@idpersona int,
+	@nombre nvarchar(100),
+	@correo nvarchar(100),
+	@contras nvarchar(50),
+	@haserror bit out
+)
+as
+begin try
+	set @haserror = 0;
+	if exists(select top 1 1 from persona where correo = @correo)
+	begin
+		set @haserror = 1
+	end
+	else
+	begin
+		update persona
+		set 
+		nombre = @nombre,
+		correo = @correo,
+		contras = @contras
+		where idpersona = @idpersona
+	end
+end try
+begin catch
+	set @haserror = 1;
+end catch
+go
+

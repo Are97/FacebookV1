@@ -42,6 +42,7 @@
             this.textBoxContraseñaModificar = new System.Windows.Forms.TextBox();
             this.textBoxContraseñaNuevaModificar = new System.Windows.Forms.TextBox();
             this.textBoxContraseñaConfModificar = new System.Windows.Forms.TextBox();
+            this.radioButtonCambiarContraseña = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,12 +248,24 @@
             this.textBoxContraseñaConfModificar.Visible = false;
             this.textBoxContraseñaConfModificar.Click += new System.EventHandler(this.textBoxContraseñaConfModificar_Click);
             // 
+            // radioButtonCambiarContraseña
+            // 
+            this.radioButtonCambiarContraseña.AutoSize = true;
+            this.radioButtonCambiarContraseña.Location = new System.Drawing.Point(198, 178);
+            this.radioButtonCambiarContraseña.Name = "radioButtonCambiarContraseña";
+            this.radioButtonCambiarContraseña.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonCambiarContraseña.TabIndex = 22;
+            this.radioButtonCambiarContraseña.TabStop = true;
+            this.radioButtonCambiarContraseña.UseVisualStyleBackColor = true;
+            this.radioButtonCambiarContraseña.Visible = false;
+            // 
             // FormPagPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FacebookV1.Properties.Resources.Timeline;
             this.ClientSize = new System.Drawing.Size(685, 736);
+            this.Controls.Add(this.radioButtonCambiarContraseña);
             this.Controls.Add(this.textBoxContraseñaConfModificar);
             this.Controls.Add(this.textBoxContraseñaNuevaModificar);
             this.Controls.Add(this.textBoxContraseñaModificar);
@@ -290,5 +303,6 @@
         private System.Windows.Forms.TextBox textBoxContraseñaModificar;
         private System.Windows.Forms.TextBox textBoxContraseñaNuevaModificar;
         private System.Windows.Forms.TextBox textBoxContraseñaConfModificar;
+        private System.Windows.Forms.RadioButton radioButtonCambiarContraseña;
     }
 }

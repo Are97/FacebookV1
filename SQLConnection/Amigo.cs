@@ -5,21 +5,23 @@ namespace FacebookV1.SQLConnection
 {
     public class Amigo
     {
-        //[Key]
-        //[Display(Name = "ID")]
-        //public int idpersona  { set; get; }
 
-        //[Display(Name = "Nombre")]
-        //[Required(ErrorMessage = "El Nombre es Requerido")]
-        //public string nombre { set; get; }
+        public int idpersona { set; get; }
 
-        //[Display(Name = "Cumpleaños")]
-        //public DateTime fecnac { set; get; }
+        public string nombre { set; get; }
 
-        //[Display(Name = "Direccion")]
-        //public string direccion { set; get; }
+        public string apellido { set; get; }
 
-        //[Display(Name = "Telefono")]
-        //public string telefono { set; get; }
+        public string correo { set; get; }
+
+        public string contras { set; get; }
+
+        public int dia { set; get; }
+
+        public string mes { set; get; }
+
+        public int año { set; get; }
+
+        public bool sexo { set; get; }
     }
 }

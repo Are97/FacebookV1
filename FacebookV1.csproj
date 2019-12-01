@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,6 +68,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLConnection\Amigo.cs" />
+    <Compile Include="SQLConnection\DataService.cs" />
     <Compile Include="SQLConnection\PersonaDataService.cs" />
     <Compile Include="SQLConnection\SqlClient.cs" />
     <EmbeddedResource Include="Form1.resx">
