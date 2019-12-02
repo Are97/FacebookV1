@@ -47,6 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadenaResponsabilidad\Chain\EncargadoBuscarAmigos.cs" />
+    <Compile Include="CadenaResponsabilidad\Chain\EncargadoCerrarSesion.cs" />
+    <Compile Include="CadenaResponsabilidad\Chain\EncargadoInicio.cs" />
+    <Compile Include="CadenaResponsabilidad\Chain\EncargadoModificarPerfil.cs" />
+    <Compile Include="CadenaResponsabilidad\Chain\EncargadoOpciones.cs" />
+    <Compile Include="CadenaResponsabilidad\Chain\EncargadoPerfil.cs" />
+    <Compile Include="CadenaResponsabilidad\Handler.cs" />
+    <Compile Include="CadenaResponsabilidad\Request.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using FacebookV1.SQLConnection;
+using FacebookV1.CadenaResponsabilidad.Chain;
+using FacebookV1.CadenaResponsabilidad;
 
 namespace FacebookV1
 {
@@ -20,13 +22,31 @@ namespace FacebookV1
         public string correo = "";
         private static DataService _service;
 
+        //Chain of Responsability
+        EncargadoBuscarAmigos EBA = new EncargadoBuscarAmigos();
+        EncargadoCerrarSesion ECS = new EncargadoCerrarSesion();
+        EncargadoInicio EI = new EncargadoInicio();
+        EncargadoModificarPerfil EMP = new EncargadoModificarPerfil();
+        EncargadoPerfil EP = new EncargadoPerfil();
+        EncargadoOpciones EO = new EncargadoOpciones();
+
+
+
+
         public FormPagPrincipal(string _idpersona, string _nombre, string _correo, string _contra)
         {
             InitializeComponent();
+            //Chain of responsability Successors
+            EBA.setSuccessor(ECS);
+            ECS.setSuccessor(EI);
+            EI.setSuccessor(EMP);
+            EMP.setSuccessor(EP);
+            EP.setSuccessor(EO);
+
             var connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ToString();
             _service = new DataService(connectionString);
             buttonPerfil.Text = _nombre;
-            List<string> opciones = new List<string>() { "Opciones","Inicio", "Perfil", "Buscar amigos","Modificar perfil" ,"Cerrar sesión"};
+            List<string> opciones = new List<string>() { "Opciones","Inicio", "Perfil", "BuscarAmigos","ModificarPerfil" ,"CerrarSesión"};
             comboBoxOpciones.DataSource = opciones;
             textBoxNombreModificar.Text = _nombre;
             textBoxCorreoModificar.Text = _correo;
@@ -83,10 +103,14 @@ namespace FacebookV1
         }
 
         private void buttonIr_Click(object sender, EventArgs e)
-        {
-            switch (comboBoxOpciones.Text)
+        {   
+            Request request = new Request(comboBoxOpciones.Text);
+            EBA.handleRequest(request);
+            int res;
+            res = request.GetNum();
+            switch (res)
             {
-                case "Modificar perfil":
+                case 1:
                     pictureBoxModificar.Visible = true;
                     textBoxNombreModificar.Visible = true;
                     textBoxNombreModificar.BringToFront();
@@ -106,18 +130,18 @@ namespace FacebookV1
                     buttonAceptar.BringToFront();
                     pictureBoxNohacercaso.Visible = true;
                     break;
-                case "Cerrar sesión":
+                case 2:
                     this.Hide();
                     Form1 f1 = new Form1();
                     f1.Show();
                     break;
-                case "Inicio":
+                case 3:
                     buttonInicio_Click(sender, e);
                     break;
-                case "Perfil":
+                case 4:
                     buttonPerfil_Click(sender, e);
                     break;
-                case "Buscar amigos":
+                case 5:
                     buttonBuscar_Click(sender, e);
                     break;
                 default:
