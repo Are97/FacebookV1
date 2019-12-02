@@ -82,6 +82,21 @@ namespace FacebookV1
             buttonAceptar.Visible = false;
             pictureBoxNohacercaso.Visible = false;
 
+            labelNombre1.Visible = true;
+            labelNombre2.Visible = true;
+            labelComentarios1.Visible = true;
+            labelComentarios2.Visible = true;
+            labelMeGusta1.Visible = true;
+            labelMeGusta2.Visible = true;
+            buttonMeGusta1.Visible = true;
+            buttonMeGusta2.Visible = true;
+            buttonComentar1.Visible = true;
+            buttonComentar2.Visible = true;
+            pictureBoxImg1.Visible = true;
+            pictureBoxImg2.Visible = true;
+            textBoxPost1.Visible = true;
+            textBoxPost2.Visible = true;
+
             buttonAceptarPost.Visible = true;
             buttonAceptarPost.BringToFront();
             pictureBoxPublicar.Visible = true;
@@ -110,7 +125,7 @@ namespace FacebookV1
             res = request.GetNum();
             switch (res)
             {
-                case 1:
+                case 1: //ModificarPerfil
                     pictureBoxModificar.Visible = true;
                     textBoxNombreModificar.Visible = true;
                     textBoxNombreModificar.BringToFront();
@@ -123,6 +138,21 @@ namespace FacebookV1
                     textBoxContraseñaConfModificar.Visible = true;
                     textBoxContraseñaConfModificar.BringToFront();
 
+                    labelNombre1.Visible = false;
+                    labelNombre2.Visible = false;
+                    labelComentarios1.Visible = false;
+                    labelComentarios2.Visible = false;
+                    labelMeGusta1.Visible = false;
+                    labelMeGusta2.Visible = false;
+                    buttonMeGusta1.Visible = false;
+                    buttonMeGusta2.Visible = false;
+                    buttonComentar1.Visible = false;
+                    buttonComentar2.Visible = false;
+                    pictureBoxImg1.Visible = false;
+                    pictureBoxImg2.Visible = false;
+                    textBoxPost1.Visible = false;
+                    textBoxPost2.Visible = false;
+
                     buttonAceptarPost.Visible = false;
                     textBox1.Visible = false;
                     pictureBoxPublicar.Visible = false;
@@ -130,18 +160,18 @@ namespace FacebookV1
                     buttonAceptar.BringToFront();
                     pictureBoxNohacercaso.Visible = true;
                     break;
-                case 2:
+                case 2: //Cerrar sesion
                     this.Hide();
                     Form1 f1 = new Form1();
                     f1.Show();
                     break;
-                case 3:
+                case 3: //Inicio
                     buttonInicio_Click(sender, e);
                     break;
-                case 4:
+                case 4: //Perfil
                     buttonPerfil_Click(sender, e);
                     break;
-                case 5:
+                case 5://Buscar Amigos
                     buttonBuscar_Click(sender, e);
                     break;
                 default:
@@ -222,6 +252,11 @@ namespace FacebookV1
             MessageBox.Show("Me gusta tu post!");
             textBox1.ForeColor = System.Drawing.Color.Gray;
             textBox1.Text = "¿Qué estás pensando, " + nombre + "?";
+        }
+
+        private void labelMeGusta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -46,9 +46,25 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBoxNohacercaso = new System.Windows.Forms.PictureBox();
             this.buttonAceptarPost = new System.Windows.Forms.Button();
+            this.labelNombre2 = new System.Windows.Forms.Label();
+            this.labelMeGusta2 = new System.Windows.Forms.Label();
+            this.labelComentarios2 = new System.Windows.Forms.Label();
+            this.buttonMeGusta2 = new System.Windows.Forms.Button();
+            this.buttonComentar2 = new System.Windows.Forms.Button();
+            this.buttonMeGusta1 = new System.Windows.Forms.Button();
+            this.buttonComentar1 = new System.Windows.Forms.Button();
+            this.labelMeGusta1 = new System.Windows.Forms.Label();
+            this.labelComentarios1 = new System.Windows.Forms.Label();
+            this.labelNombre1 = new System.Windows.Forms.Label();
+            this.textBoxPost2 = new System.Windows.Forms.TextBox();
+            this.pictureBoxImg2 = new System.Windows.Forms.PictureBox();
+            this.textBoxPost1 = new System.Windows.Forms.TextBox();
+            this.pictureBoxImg1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPublicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNohacercaso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxBuscar
@@ -280,7 +296,7 @@
             // pictureBoxNohacercaso
             // 
             this.pictureBoxNohacercaso.BackColor = System.Drawing.Color.White;
-            this.pictureBoxNohacercaso.Location = new System.Drawing.Point(124, 392);
+            this.pictureBoxNohacercaso.Location = new System.Drawing.Point(121, 392);
             this.pictureBoxNohacercaso.Name = "pictureBoxNohacercaso";
             this.pictureBoxNohacercaso.Size = new System.Drawing.Size(424, 294);
             this.pictureBoxNohacercaso.TabIndex = 24;
@@ -304,12 +320,207 @@
             this.buttonAceptarPost.UseVisualStyleBackColor = true;
             this.buttonAceptarPost.Click += new System.EventHandler(this.buttonAceptarPost_Click);
             // 
+            // labelNombre2
+            // 
+            this.labelNombre2.AutoSize = true;
+            this.labelNombre2.BackColor = System.Drawing.Color.White;
+            this.labelNombre2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(88)))), ((int)(((byte)(152)))));
+            this.labelNombre2.Location = new System.Drawing.Point(131, 434);
+            this.labelNombre2.Name = "labelNombre2";
+            this.labelNombre2.Size = new System.Drawing.Size(88, 17);
+            this.labelNombre2.TabIndex = 26;
+            this.labelNombre2.Text = "Luis Esqueda";
+            // 
+            // labelMeGusta2
+            // 
+            this.labelMeGusta2.AutoSize = true;
+            this.labelMeGusta2.BackColor = System.Drawing.Color.White;
+            this.labelMeGusta2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeGusta2.ForeColor = System.Drawing.Color.DimGray;
+            this.labelMeGusta2.Location = new System.Drawing.Point(434, 659);
+            this.labelMeGusta2.Name = "labelMeGusta2";
+            this.labelMeGusta2.Size = new System.Drawing.Size(14, 15);
+            this.labelMeGusta2.TabIndex = 27;
+            this.labelMeGusta2.Text = "0";
+            this.labelMeGusta2.Click += new System.EventHandler(this.labelMeGusta_Click);
+            // 
+            // labelComentarios2
+            // 
+            this.labelComentarios2.AutoSize = true;
+            this.labelComentarios2.BackColor = System.Drawing.Color.White;
+            this.labelComentarios2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComentarios2.ForeColor = System.Drawing.Color.DimGray;
+            this.labelComentarios2.Location = new System.Drawing.Point(457, 659);
+            this.labelComentarios2.Name = "labelComentarios2";
+            this.labelComentarios2.Size = new System.Drawing.Size(14, 15);
+            this.labelComentarios2.TabIndex = 28;
+            this.labelComentarios2.Text = "0";
+            // 
+            // buttonMeGusta2
+            // 
+            this.buttonMeGusta2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonMeGusta2.BackColor = System.Drawing.Color.Transparent;
+            this.buttonMeGusta2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMeGusta2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonMeGusta2.FlatAppearance.BorderSize = 0;
+            this.buttonMeGusta2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonMeGusta2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMeGusta2.Image = global::FacebookV1.Properties.Resources.MeGusta;
+            this.buttonMeGusta2.Location = new System.Drawing.Point(128, 652);
+            this.buttonMeGusta2.Name = "buttonMeGusta2";
+            this.buttonMeGusta2.Size = new System.Drawing.Size(85, 23);
+            this.buttonMeGusta2.TabIndex = 29;
+            this.buttonMeGusta2.UseVisualStyleBackColor = true;
+            // 
+            // buttonComentar2
+            // 
+            this.buttonComentar2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonComentar2.BackColor = System.Drawing.Color.Transparent;
+            this.buttonComentar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonComentar2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonComentar2.FlatAppearance.BorderSize = 0;
+            this.buttonComentar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonComentar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonComentar2.Image = global::FacebookV1.Properties.Resources.Comentar;
+            this.buttonComentar2.Location = new System.Drawing.Point(274, 652);
+            this.buttonComentar2.Name = "buttonComentar2";
+            this.buttonComentar2.Size = new System.Drawing.Size(85, 23);
+            this.buttonComentar2.TabIndex = 30;
+            this.buttonComentar2.UseVisualStyleBackColor = true;
+            // 
+            // buttonMeGusta1
+            // 
+            this.buttonMeGusta1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonMeGusta1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonMeGusta1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMeGusta1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonMeGusta1.FlatAppearance.BorderSize = 0;
+            this.buttonMeGusta1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonMeGusta1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMeGusta1.Image = global::FacebookV1.Properties.Resources.MeGusta;
+            this.buttonMeGusta1.Location = new System.Drawing.Point(127, 402);
+            this.buttonMeGusta1.Name = "buttonMeGusta1";
+            this.buttonMeGusta1.Size = new System.Drawing.Size(85, 23);
+            this.buttonMeGusta1.TabIndex = 31;
+            this.buttonMeGusta1.UseVisualStyleBackColor = true;
+            // 
+            // buttonComentar1
+            // 
+            this.buttonComentar1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonComentar1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonComentar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonComentar1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonComentar1.FlatAppearance.BorderSize = 0;
+            this.buttonComentar1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonComentar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonComentar1.Image = global::FacebookV1.Properties.Resources.Comentar;
+            this.buttonComentar1.Location = new System.Drawing.Point(273, 402);
+            this.buttonComentar1.Name = "buttonComentar1";
+            this.buttonComentar1.Size = new System.Drawing.Size(85, 23);
+            this.buttonComentar1.TabIndex = 32;
+            this.buttonComentar1.UseVisualStyleBackColor = true;
+            // 
+            // labelMeGusta1
+            // 
+            this.labelMeGusta1.AutoSize = true;
+            this.labelMeGusta1.BackColor = System.Drawing.Color.White;
+            this.labelMeGusta1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeGusta1.ForeColor = System.Drawing.Color.DimGray;
+            this.labelMeGusta1.Location = new System.Drawing.Point(434, 407);
+            this.labelMeGusta1.Name = "labelMeGusta1";
+            this.labelMeGusta1.Size = new System.Drawing.Size(14, 15);
+            this.labelMeGusta1.TabIndex = 33;
+            this.labelMeGusta1.Text = "0";
+            // 
+            // labelComentarios1
+            // 
+            this.labelComentarios1.AutoSize = true;
+            this.labelComentarios1.BackColor = System.Drawing.Color.White;
+            this.labelComentarios1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComentarios1.ForeColor = System.Drawing.Color.DimGray;
+            this.labelComentarios1.Location = new System.Drawing.Point(457, 407);
+            this.labelComentarios1.Name = "labelComentarios1";
+            this.labelComentarios1.Size = new System.Drawing.Size(14, 15);
+            this.labelComentarios1.TabIndex = 34;
+            this.labelComentarios1.Text = "0";
+            // 
+            // labelNombre1
+            // 
+            this.labelNombre1.AutoSize = true;
+            this.labelNombre1.BackColor = System.Drawing.Color.White;
+            this.labelNombre1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(88)))), ((int)(((byte)(152)))));
+            this.labelNombre1.Location = new System.Drawing.Point(131, 214);
+            this.labelNombre1.Name = "labelNombre1";
+            this.labelNombre1.Size = new System.Drawing.Size(88, 17);
+            this.labelNombre1.TabIndex = 35;
+            this.labelNombre1.Text = "Luis Esqueda";
+            // 
+            // textBoxPost2
+            // 
+            this.textBoxPost2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPost2.BackColor = System.Drawing.Color.White;
+            this.textBoxPost2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPost2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPost2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxPost2.Location = new System.Drawing.Point(130, 462);
+            this.textBoxPost2.Name = "textBoxPost2";
+            this.textBoxPost2.Size = new System.Drawing.Size(425, 22);
+            this.textBoxPost2.TabIndex = 36;
+            this.textBoxPost2.Text = "Este es mi Segundo Post!!";
+            // 
+            // pictureBoxImg2
+            // 
+            this.pictureBoxImg2.BackColor = System.Drawing.Color.White;
+            this.pictureBoxImg2.Location = new System.Drawing.Point(121, 490);
+            this.pictureBoxImg2.Name = "pictureBoxImg2";
+            this.pictureBoxImg2.Size = new System.Drawing.Size(424, 156);
+            this.pictureBoxImg2.TabIndex = 37;
+            this.pictureBoxImg2.TabStop = false;
+            // 
+            // textBoxPost1
+            // 
+            this.textBoxPost1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPost1.BackColor = System.Drawing.Color.White;
+            this.textBoxPost1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPost1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPost1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxPost1.Location = new System.Drawing.Point(130, 233);
+            this.textBoxPost1.Name = "textBoxPost1";
+            this.textBoxPost1.Size = new System.Drawing.Size(425, 22);
+            this.textBoxPost1.TabIndex = 38;
+            this.textBoxPost1.Text = "Este es mi primer Post!!";
+            // 
+            // pictureBoxImg1
+            // 
+            this.pictureBoxImg1.BackColor = System.Drawing.Color.White;
+            this.pictureBoxImg1.Location = new System.Drawing.Point(121, 261);
+            this.pictureBoxImg1.Name = "pictureBoxImg1";
+            this.pictureBoxImg1.Size = new System.Drawing.Size(424, 143);
+            this.pictureBoxImg1.TabIndex = 39;
+            this.pictureBoxImg1.TabStop = false;
+            // 
             // FormPagPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FacebookV1.Properties.Resources.Timeline;
             this.ClientSize = new System.Drawing.Size(685, 736);
+            this.Controls.Add(this.pictureBoxImg1);
+            this.Controls.Add(this.textBoxPost1);
+            this.Controls.Add(this.pictureBoxImg2);
+            this.Controls.Add(this.textBoxPost2);
+            this.Controls.Add(this.labelNombre1);
+            this.Controls.Add(this.labelComentarios1);
+            this.Controls.Add(this.labelMeGusta1);
+            this.Controls.Add(this.buttonComentar1);
+            this.Controls.Add(this.buttonMeGusta1);
+            this.Controls.Add(this.buttonComentar2);
+            this.Controls.Add(this.buttonMeGusta2);
+            this.Controls.Add(this.labelComentarios2);
+            this.Controls.Add(this.labelMeGusta2);
+            this.Controls.Add(this.labelNombre2);
             this.Controls.Add(this.buttonAceptarPost);
             this.Controls.Add(this.pictureBoxNohacercaso);
             this.Controls.Add(this.textBox1);
@@ -334,6 +545,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPublicar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNohacercaso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +571,19 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBoxNohacercaso;
         private System.Windows.Forms.Button buttonAceptarPost;
+        private System.Windows.Forms.Label labelNombre2;
+        private System.Windows.Forms.Label labelMeGusta2;
+        private System.Windows.Forms.Label labelComentarios2;
+        private System.Windows.Forms.Button buttonMeGusta2;
+        private System.Windows.Forms.Button buttonComentar2;
+        private System.Windows.Forms.Button buttonMeGusta1;
+        private System.Windows.Forms.Button buttonComentar1;
+        private System.Windows.Forms.Label labelMeGusta1;
+        private System.Windows.Forms.Label labelComentarios1;
+        private System.Windows.Forms.Label labelNombre1;
+        private System.Windows.Forms.TextBox textBoxPost2;
+        private System.Windows.Forms.PictureBox pictureBoxImg2;
+        private System.Windows.Forms.TextBox textBoxPost1;
+        private System.Windows.Forms.PictureBox pictureBoxImg1;
     }
 }

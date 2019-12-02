@@ -117,8 +117,10 @@
   <ItemGroup>
     <None Include="Imgs\config.png" />
     <None Include="Imgs\Aceptar.png" />
+    <None Include="Imgs\Comentar.png" />
     <Content Include="Imgs\Icon.ico" />
     <None Include="Imgs\Publicar.png" />
+    <None Include="Imgs\MeGusta.png" />
     <Content Include="Imgs\Registro.png" />
     <Content Include="Imgs\Timeline.png" />
     <Content Include="SQLConnection\Init.sql" />
