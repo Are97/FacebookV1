@@ -26,5 +26,17 @@ namespace FacebookV1.SQLConnection
                 return false;
             }
         }
+
+        public bool Postear(string idpersona, string post, string urlimg)
+        {
+            try
+            {
+                return _dataService.Postear(idpersona, post, urlimg);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

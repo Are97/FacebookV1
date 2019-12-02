@@ -76,3 +76,28 @@ begin catch
 end catch
 go
 
+create table post(
+	idpost int primary key identity(1,1),
+	idpersona int not null,
+	post nvarchar(150) not null,
+	urlimg nvarchar(100),
+	likes int,
+	comentarios int);
+go
+
+create procedure Postear
+(
+	@idpersona int,
+	@post nvarchar(150),
+	@urlimg nvarchar(100),
+	@haserror bit out
+)
+as
+begin try
+	set @haserror = 0;
+	insert into post values (@idpersona,@post,@urlimg,0,0);
+end try
+begin catch
+	set @haserror = 1;
+end catch
+go

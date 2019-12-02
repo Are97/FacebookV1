@@ -328,9 +328,8 @@
             this.labelNombre2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(88)))), ((int)(((byte)(152)))));
             this.labelNombre2.Location = new System.Drawing.Point(131, 434);
             this.labelNombre2.Name = "labelNombre2";
-            this.labelNombre2.Size = new System.Drawing.Size(88, 17);
+            this.labelNombre2.Size = new System.Drawing.Size(0, 17);
             this.labelNombre2.TabIndex = 26;
-            this.labelNombre2.Text = "Luis Esqueda";
             // 
             // labelMeGusta2
             // 
@@ -343,6 +342,7 @@
             this.labelMeGusta2.Size = new System.Drawing.Size(14, 15);
             this.labelMeGusta2.TabIndex = 27;
             this.labelMeGusta2.Text = "0";
+            this.labelMeGusta2.Visible = false;
             this.labelMeGusta2.Click += new System.EventHandler(this.labelMeGusta_Click);
             // 
             // labelComentarios2
@@ -356,6 +356,7 @@
             this.labelComentarios2.Size = new System.Drawing.Size(14, 15);
             this.labelComentarios2.TabIndex = 28;
             this.labelComentarios2.Text = "0";
+            this.labelComentarios2.Visible = false;
             // 
             // buttonMeGusta2
             // 
@@ -372,6 +373,7 @@
             this.buttonMeGusta2.Size = new System.Drawing.Size(85, 23);
             this.buttonMeGusta2.TabIndex = 29;
             this.buttonMeGusta2.UseVisualStyleBackColor = true;
+            this.buttonMeGusta2.Visible = false;
             // 
             // buttonComentar2
             // 
@@ -388,6 +390,7 @@
             this.buttonComentar2.Size = new System.Drawing.Size(85, 23);
             this.buttonComentar2.TabIndex = 30;
             this.buttonComentar2.UseVisualStyleBackColor = true;
+            this.buttonComentar2.Visible = false;
             // 
             // buttonMeGusta1
             // 
@@ -404,6 +407,7 @@
             this.buttonMeGusta1.Size = new System.Drawing.Size(85, 23);
             this.buttonMeGusta1.TabIndex = 31;
             this.buttonMeGusta1.UseVisualStyleBackColor = true;
+            this.buttonMeGusta1.Visible = false;
             // 
             // buttonComentar1
             // 
@@ -420,6 +424,7 @@
             this.buttonComentar1.Size = new System.Drawing.Size(85, 23);
             this.buttonComentar1.TabIndex = 32;
             this.buttonComentar1.UseVisualStyleBackColor = true;
+            this.buttonComentar1.Visible = false;
             // 
             // labelMeGusta1
             // 
@@ -432,6 +437,7 @@
             this.labelMeGusta1.Size = new System.Drawing.Size(14, 15);
             this.labelMeGusta1.TabIndex = 33;
             this.labelMeGusta1.Text = "0";
+            this.labelMeGusta1.Visible = false;
             // 
             // labelComentarios1
             // 
@@ -444,6 +450,7 @@
             this.labelComentarios1.Size = new System.Drawing.Size(14, 15);
             this.labelComentarios1.TabIndex = 34;
             this.labelComentarios1.Text = "0";
+            this.labelComentarios1.Visible = false;
             // 
             // labelNombre1
             // 
@@ -453,22 +460,22 @@
             this.labelNombre1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(88)))), ((int)(((byte)(152)))));
             this.labelNombre1.Location = new System.Drawing.Point(131, 214);
             this.labelNombre1.Name = "labelNombre1";
-            this.labelNombre1.Size = new System.Drawing.Size(88, 17);
+            this.labelNombre1.Size = new System.Drawing.Size(0, 17);
             this.labelNombre1.TabIndex = 35;
-            this.labelNombre1.Text = "Luis Esqueda";
             // 
             // textBoxPost2
             // 
             this.textBoxPost2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPost2.BackColor = System.Drawing.Color.White;
             this.textBoxPost2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPost2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxPost2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPost2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxPost2.Location = new System.Drawing.Point(130, 462);
             this.textBoxPost2.Name = "textBoxPost2";
+            this.textBoxPost2.ReadOnly = true;
             this.textBoxPost2.Size = new System.Drawing.Size(425, 22);
             this.textBoxPost2.TabIndex = 36;
-            this.textBoxPost2.Text = "Este es mi Segundo Post!!";
             // 
             // pictureBoxImg2
             // 
@@ -484,13 +491,14 @@
             this.textBoxPost1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPost1.BackColor = System.Drawing.Color.White;
             this.textBoxPost1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPost1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxPost1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPost1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxPost1.Location = new System.Drawing.Point(130, 233);
             this.textBoxPost1.Name = "textBoxPost1";
+            this.textBoxPost1.ReadOnly = true;
             this.textBoxPost1.Size = new System.Drawing.Size(425, 22);
             this.textBoxPost1.TabIndex = 38;
-            this.textBoxPost1.Text = "Este es mi primer Post!!";
             // 
             // pictureBoxImg1
             // 

@@ -11,6 +11,7 @@ using System.Configuration;
 using FacebookV1.SQLConnection;
 using FacebookV1.CadenaResponsabilidad.Chain;
 using FacebookV1.CadenaResponsabilidad;
+using System.Data.SqlClient;
 
 namespace FacebookV1
 {
@@ -55,6 +56,22 @@ namespace FacebookV1
             nombre = _nombre;
             correo = _correo;
             textBox1.Text = "¿Qué estás pensando, " + nombre + "?";
+
+            labelNombre1.Visible = false;
+            labelNombre2.Visible = false;
+            labelComentarios1.Visible = false;
+            labelComentarios2.Visible = false;
+            labelMeGusta1.Visible = false;
+            labelMeGusta2.Visible = false;
+            buttonMeGusta1.Visible = false;
+            buttonMeGusta2.Visible = false;
+            buttonComentar1.Visible = false;
+            buttonComentar2.Visible = false;
+            pictureBoxImg1.Visible = false;
+            pictureBoxImg2.Visible = false;
+            textBoxPost1.Visible = false;
+            textBoxPost2.Visible = false;
+
         }
 
         private void textBoxBuscar_Click(object sender, EventArgs e)
@@ -249,7 +266,35 @@ namespace FacebookV1
 
         private void buttonAceptarPost_Click(object sender, EventArgs e)
         {
+            labelNombre1.Text = nombre;
             MessageBox.Show("Me gusta tu post!");
+
+
+
+            if(_service.Postear(idpersona, textBox1.Text, ""))
+            {
+                labelNombre1.Visible = true;
+                labelNombre2.Visible = true;
+                labelComentarios1.Visible = true;
+                labelComentarios2.Visible = true;
+                labelMeGusta1.Visible = true;
+                labelMeGusta2.Visible = true;
+                buttonMeGusta1.Visible = true;
+                buttonMeGusta2.Visible = true;
+                buttonComentar1.Visible = true;
+                buttonComentar2.Visible = true;
+                pictureBoxImg1.Visible = true;
+                pictureBoxImg2.Visible = true;
+                textBoxPost1.Visible = true;
+                textBoxPost2.Visible = true;
+                textBoxPost1.Text = textBox1.Text;
+                MessageBox.Show("Ese post estuvo \ngenial!!");
+            }
+            else
+            {
+                MessageBox.Show("Error de conexion, \nvuelva a intentarlo");
+            }
+
             textBox1.ForeColor = System.Drawing.Color.Gray;
             textBox1.Text = "¿Qué estás pensando, " + nombre + "?";
         }

@@ -96,5 +96,67 @@ namespace FacebookV1.SQLConnection
             return result;
         }
 
+
+        public bool Postear(string idpersona, string post, string urlimg)
+        {
+            var result = false;
+            try
+            {
+                if (_client.Open())
+                {
+                    var command = new SqlCommand
+                    {
+                        Connection = _client.Conecction,
+                        CommandText = "Postear",
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    var par1 = new SqlParameter("@idpersona", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Input,
+                        Value = System.Convert.ToInt32(idpersona)
+                    };
+
+                    var par2 = new SqlParameter("@post", SqlDbType.NVarChar)
+                    {
+                        Direction = ParameterDirection.Input,
+                        Value = post
+                    };
+
+                    var par3 = new SqlParameter("@urlimg", SqlDbType.NVarChar)
+                    {
+                        Direction = ParameterDirection.Input,
+                        Value = urlimg
+                    };
+
+                    var par4 = new SqlParameter("@haserror", SqlDbType.Bit)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+
+                    command.Parameters.Add(par1);
+                    command.Parameters.Add(par2);
+                    command.Parameters.Add(par3);
+                    command.Parameters.Add(par4);
+
+                    command.ExecuteNonQuery();
+
+                    result = !Convert.ToBoolean(command.Parameters["@haserror"].Value.ToString());
+
+
+                }
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            finally
+            {
+                _client.Close();
+            }
+
+            return result;
+        }
+
     }
 }
