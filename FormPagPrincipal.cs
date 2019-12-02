@@ -34,6 +34,7 @@ namespace FacebookV1
             idpersona = _idpersona;
             nombre = _nombre;
             correo = _correo;
+            textBox1.Text = "¿Qué estás pensando, " + nombre + "?";
         }
 
         private void textBoxBuscar_Click(object sender, EventArgs e)
@@ -59,6 +60,15 @@ namespace FacebookV1
             textBoxContraseñaNuevaModificar.Visible = false;
             textBoxContraseñaConfModificar.Visible = false;
             buttonAceptar.Visible = false;
+            pictureBoxNohacercaso.Visible = false;
+
+            buttonAceptarPost.Visible = true;
+            buttonAceptarPost.BringToFront();
+            pictureBoxPublicar.Visible = true;
+            textBox1.Visible = true;
+            textBox1.BringToFront();
+            textBox1.ForeColor = System.Drawing.Color.Gray;
+            textBox1.Text = "¿Qué estás pensando, " + nombre + "?";
             buttonPerfil.Text = nombre;
         }
 
@@ -88,16 +98,30 @@ namespace FacebookV1
                     textBoxContraseñaNuevaModificar.BringToFront();
                     textBoxContraseñaConfModificar.Visible = true;
                     textBoxContraseñaConfModificar.BringToFront();
+
+                    buttonAceptarPost.Visible = false;
+                    textBox1.Visible = false;
+                    pictureBoxPublicar.Visible = false;
                     buttonAceptar.Visible = true;
                     buttonAceptar.BringToFront();
+                    pictureBoxNohacercaso.Visible = true;
                     break;
                 case "Cerrar sesión":
                     this.Hide();
                     Form1 f1 = new Form1();
                     f1.Show();
                     break;
+                case "Inicio":
+                    buttonInicio_Click(sender, e);
+                    break;
+                case "Perfil":
+                    buttonPerfil_Click(sender, e);
+                    break;
+                case "Buscar amigos":
+                    buttonBuscar_Click(sender, e);
+                    break;
                 default:
-                    MessageBox.Show(comboBoxOpciones.Text);
+                    MessageBox.Show("Opción no válida");
                     break;
 
             }
@@ -158,6 +182,22 @@ namespace FacebookV1
         private void FormPagPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "¿Qué estás pensando, " + nombre + "?")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void buttonAceptarPost_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Me gusta tu post!");
+            textBox1.ForeColor = System.Drawing.Color.Gray;
+            textBox1.Text = "¿Qué estás pensando, " + nombre + "?";
         }
     }
 }

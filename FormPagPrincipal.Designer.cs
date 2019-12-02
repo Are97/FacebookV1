@@ -42,7 +42,13 @@
             this.textBoxContraseñaModificar = new System.Windows.Forms.TextBox();
             this.textBoxContraseñaNuevaModificar = new System.Windows.Forms.TextBox();
             this.textBoxContraseñaConfModificar = new System.Windows.Forms.TextBox();
+            this.pictureBoxPublicar = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBoxNohacercaso = new System.Windows.Forms.PictureBox();
+            this.buttonAceptarPost = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPublicar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNohacercaso)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxBuscar
@@ -102,9 +108,9 @@
             this.buttonPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPerfil.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPerfil.ForeColor = System.Drawing.Color.White;
-            this.buttonPerfil.Location = new System.Drawing.Point(380, 9);
+            this.buttonPerfil.Location = new System.Drawing.Point(399, 9);
             this.buttonPerfil.Name = "buttonPerfil";
-            this.buttonPerfil.Size = new System.Drawing.Size(91, 24);
+            this.buttonPerfil.Size = new System.Drawing.Size(63, 24);
             this.buttonPerfil.TabIndex = 12;
             this.buttonPerfil.Text = "Nombre";
             this.buttonPerfil.UseVisualStyleBackColor = true;
@@ -149,7 +155,7 @@
             // 
             this.pictureBoxModificar.BackgroundImage = global::FacebookV1.Properties.Resources.config;
             this.pictureBoxModificar.InitialImage = global::FacebookV1.Properties.Resources.config;
-            this.pictureBoxModificar.Location = new System.Drawing.Point(110, 57);
+            this.pictureBoxModificar.Location = new System.Drawing.Point(111, 58);
             this.pictureBoxModificar.Name = "pictureBoxModificar";
             this.pictureBoxModificar.Size = new System.Drawing.Size(451, 291);
             this.pictureBoxModificar.TabIndex = 15;
@@ -166,9 +172,9 @@
             this.buttonAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAceptar.Image = global::FacebookV1.Properties.Resources.Aceptar;
-            this.buttonAceptar.Location = new System.Drawing.Point(273, 300);
+            this.buttonAceptar.Location = new System.Drawing.Point(273, 299);
             this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(144, 38);
+            this.buttonAceptar.Size = new System.Drawing.Size(144, 41);
             this.buttonAceptar.TabIndex = 16;
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Visible = false;
@@ -247,12 +253,67 @@
             this.textBoxContraseñaConfModificar.Visible = false;
             this.textBoxContraseñaConfModificar.Click += new System.EventHandler(this.textBoxContraseñaConfModificar_Click);
             // 
+            // pictureBoxPublicar
+            // 
+            this.pictureBoxPublicar.Image = global::FacebookV1.Properties.Resources.Publicar;
+            this.pictureBoxPublicar.InitialImage = global::FacebookV1.Properties.Resources.Registro;
+            this.pictureBoxPublicar.Location = new System.Drawing.Point(111, 58);
+            this.pictureBoxPublicar.Name = "pictureBoxPublicar";
+            this.pictureBoxPublicar.Size = new System.Drawing.Size(451, 150);
+            this.pictureBoxPublicar.TabIndex = 22;
+            this.pictureBoxPublicar.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.Location = new System.Drawing.Point(124, 105);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(424, 22);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.Text = "¿Qué estas pensando, ";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            // 
+            // pictureBoxNohacercaso
+            // 
+            this.pictureBoxNohacercaso.BackColor = System.Drawing.Color.White;
+            this.pictureBoxNohacercaso.Location = new System.Drawing.Point(124, 392);
+            this.pictureBoxNohacercaso.Name = "pictureBoxNohacercaso";
+            this.pictureBoxNohacercaso.Size = new System.Drawing.Size(424, 294);
+            this.pictureBoxNohacercaso.TabIndex = 24;
+            this.pictureBoxNohacercaso.TabStop = false;
+            this.pictureBoxNohacercaso.Visible = false;
+            // 
+            // buttonAceptarPost
+            // 
+            this.buttonAceptarPost.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAceptarPost.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAceptarPost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAceptarPost.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAceptarPost.FlatAppearance.BorderSize = 0;
+            this.buttonAceptarPost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAceptarPost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAceptarPost.Image = global::FacebookV1.Properties.Resources.Aceptar;
+            this.buttonAceptarPost.Location = new System.Drawing.Point(451, 160);
+            this.buttonAceptarPost.Name = "buttonAceptarPost";
+            this.buttonAceptarPost.Size = new System.Drawing.Size(97, 26);
+            this.buttonAceptarPost.TabIndex = 25;
+            this.buttonAceptarPost.UseVisualStyleBackColor = true;
+            this.buttonAceptarPost.Click += new System.EventHandler(this.buttonAceptarPost_Click);
+            // 
             // FormPagPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FacebookV1.Properties.Resources.Timeline;
             this.ClientSize = new System.Drawing.Size(685, 736);
+            this.Controls.Add(this.buttonAceptarPost);
+            this.Controls.Add(this.pictureBoxNohacercaso);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBoxPublicar);
             this.Controls.Add(this.textBoxContraseñaConfModificar);
             this.Controls.Add(this.textBoxContraseñaNuevaModificar);
             this.Controls.Add(this.textBoxContraseñaModificar);
@@ -271,6 +332,8 @@
             this.Text = " Facebook";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPagPrincipal_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPublicar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNohacercaso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +354,9 @@
         private System.Windows.Forms.TextBox textBoxContraseñaModificar;
         private System.Windows.Forms.TextBox textBoxContraseñaNuevaModificar;
         private System.Windows.Forms.TextBox textBoxContraseñaConfModificar;
+        private System.Windows.Forms.PictureBox pictureBoxPublicar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBoxNohacercaso;
+        private System.Windows.Forms.Button buttonAceptarPost;
     }
 }
