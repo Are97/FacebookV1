@@ -60,6 +60,10 @@
             this.pictureBoxImg2 = new System.Windows.Forms.PictureBox();
             this.textBoxPost1 = new System.Windows.Forms.TextBox();
             this.pictureBoxImg1 = new System.Windows.Forms.PictureBox();
+            this.buttonLikes1 = new System.Windows.Forms.Button();
+            this.buttonLikes2 = new System.Windows.Forms.Button();
+            this.buttonComments1 = new System.Windows.Forms.Button();
+            this.buttonComments2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPublicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNohacercaso)).BeginInit();
@@ -106,9 +110,9 @@
             this.buttonInicio.FlatAppearance.BorderSize = 0;
             this.buttonInicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInicio.Location = new System.Drawing.Point(468, 9);
+            this.buttonInicio.Location = new System.Drawing.Point(472, 9);
             this.buttonInicio.Name = "buttonInicio";
-            this.buttonInicio.Size = new System.Drawing.Size(51, 24);
+            this.buttonInicio.Size = new System.Drawing.Size(47, 24);
             this.buttonInicio.TabIndex = 11;
             this.buttonInicio.UseVisualStyleBackColor = true;
             this.buttonInicio.Click += new System.EventHandler(this.buttonInicio_Click);
@@ -122,13 +126,14 @@
             this.buttonPerfil.FlatAppearance.BorderSize = 0;
             this.buttonPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPerfil.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPerfil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPerfil.ForeColor = System.Drawing.Color.White;
-            this.buttonPerfil.Location = new System.Drawing.Point(399, 9);
+            this.buttonPerfil.Location = new System.Drawing.Point(381, 9);
             this.buttonPerfil.Name = "buttonPerfil";
-            this.buttonPerfil.Size = new System.Drawing.Size(63, 24);
+            this.buttonPerfil.Size = new System.Drawing.Size(85, 24);
             this.buttonPerfil.TabIndex = 12;
             this.buttonPerfil.Text = "Nombre";
+            this.buttonPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonPerfil.UseVisualStyleBackColor = true;
             this.buttonPerfil.Click += new System.EventHandler(this.buttonPerfil_Click);
             // 
@@ -471,11 +476,12 @@
             this.textBoxPost2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxPost2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPost2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPost2.Location = new System.Drawing.Point(130, 462);
+            this.textBoxPost2.Location = new System.Drawing.Point(134, 462);
             this.textBoxPost2.Name = "textBoxPost2";
             this.textBoxPost2.ReadOnly = true;
-            this.textBoxPost2.Size = new System.Drawing.Size(425, 22);
+            this.textBoxPost2.Size = new System.Drawing.Size(414, 22);
             this.textBoxPost2.TabIndex = 36;
+            this.textBoxPost2.Visible = false;
             // 
             // pictureBoxImg2
             // 
@@ -485,6 +491,7 @@
             this.pictureBoxImg2.Size = new System.Drawing.Size(424, 156);
             this.pictureBoxImg2.TabIndex = 37;
             this.pictureBoxImg2.TabStop = false;
+            this.pictureBoxImg2.Visible = false;
             // 
             // textBoxPost1
             // 
@@ -494,11 +501,12 @@
             this.textBoxPost1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxPost1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPost1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPost1.Location = new System.Drawing.Point(130, 233);
+            this.textBoxPost1.Location = new System.Drawing.Point(135, 240);
             this.textBoxPost1.Name = "textBoxPost1";
             this.textBoxPost1.ReadOnly = true;
-            this.textBoxPost1.Size = new System.Drawing.Size(425, 22);
+            this.textBoxPost1.Size = new System.Drawing.Size(410, 22);
             this.textBoxPost1.TabIndex = 38;
+            this.textBoxPost1.Visible = false;
             // 
             // pictureBoxImg1
             // 
@@ -508,6 +516,75 @@
             this.pictureBoxImg1.Size = new System.Drawing.Size(424, 143);
             this.pictureBoxImg1.TabIndex = 39;
             this.pictureBoxImg1.TabStop = false;
+            this.pictureBoxImg1.Visible = false;
+            // 
+            // buttonLikes1
+            // 
+            this.buttonLikes1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonLikes1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLikes1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLikes1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonLikes1.FlatAppearance.BorderSize = 0;
+            this.buttonLikes1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonLikes1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLikes1.Image = global::FacebookV1.Properties.Resources.Likes;
+            this.buttonLikes1.Location = new System.Drawing.Point(399, 402);
+            this.buttonLikes1.Name = "buttonLikes1";
+            this.buttonLikes1.Size = new System.Drawing.Size(29, 23);
+            this.buttonLikes1.TabIndex = 40;
+            this.buttonLikes1.UseVisualStyleBackColor = true;
+            this.buttonLikes1.Visible = false;
+            // 
+            // buttonLikes2
+            // 
+            this.buttonLikes2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonLikes2.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLikes2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLikes2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonLikes2.FlatAppearance.BorderSize = 0;
+            this.buttonLikes2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonLikes2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLikes2.Image = global::FacebookV1.Properties.Resources.Likes;
+            this.buttonLikes2.Location = new System.Drawing.Point(399, 654);
+            this.buttonLikes2.Name = "buttonLikes2";
+            this.buttonLikes2.Size = new System.Drawing.Size(29, 23);
+            this.buttonLikes2.TabIndex = 41;
+            this.buttonLikes2.UseVisualStyleBackColor = true;
+            this.buttonLikes2.Visible = false;
+            // 
+            // buttonComments1
+            // 
+            this.buttonComments1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonComments1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonComments1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonComments1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonComments1.FlatAppearance.BorderSize = 0;
+            this.buttonComments1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonComments1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonComments1.Image = global::FacebookV1.Properties.Resources.Comments;
+            this.buttonComments1.Location = new System.Drawing.Point(468, 403);
+            this.buttonComments1.Name = "buttonComments1";
+            this.buttonComments1.Size = new System.Drawing.Size(81, 23);
+            this.buttonComments1.TabIndex = 42;
+            this.buttonComments1.UseVisualStyleBackColor = true;
+            this.buttonComments1.Visible = false;
+            // 
+            // buttonComments2
+            // 
+            this.buttonComments2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonComments2.BackColor = System.Drawing.Color.Transparent;
+            this.buttonComments2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonComments2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonComments2.FlatAppearance.BorderSize = 0;
+            this.buttonComments2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonComments2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonComments2.Image = global::FacebookV1.Properties.Resources.Comments;
+            this.buttonComments2.Location = new System.Drawing.Point(468, 654);
+            this.buttonComments2.Name = "buttonComments2";
+            this.buttonComments2.Size = new System.Drawing.Size(86, 23);
+            this.buttonComments2.TabIndex = 43;
+            this.buttonComments2.UseVisualStyleBackColor = true;
+            this.buttonComments2.Visible = false;
             // 
             // FormPagPrincipal
             // 
@@ -515,6 +592,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FacebookV1.Properties.Resources.Timeline;
             this.ClientSize = new System.Drawing.Size(685, 736);
+            this.Controls.Add(this.buttonComments2);
+            this.Controls.Add(this.buttonComments1);
+            this.Controls.Add(this.buttonLikes2);
+            this.Controls.Add(this.buttonLikes1);
             this.Controls.Add(this.pictureBoxImg1);
             this.Controls.Add(this.textBoxPost1);
             this.Controls.Add(this.pictureBoxImg2);
@@ -593,5 +674,9 @@
         private System.Windows.Forms.PictureBox pictureBoxImg2;
         private System.Windows.Forms.TextBox textBoxPost1;
         private System.Windows.Forms.PictureBox pictureBoxImg1;
+        private System.Windows.Forms.Button buttonLikes1;
+        private System.Windows.Forms.Button buttonLikes2;
+        private System.Windows.Forms.Button buttonComments1;
+        private System.Windows.Forms.Button buttonComments2;
     }
 }
