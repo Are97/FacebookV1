@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prototype\Post.cs" />
     <Compile Include="SQLConnection\Amigo.cs" />
     <Compile Include="SQLConnection\DataService.cs" />
     <Compile Include="SQLConnection\PersonaDataService.cs" />

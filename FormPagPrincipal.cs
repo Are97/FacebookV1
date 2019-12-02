@@ -12,6 +12,7 @@ using FacebookV1.SQLConnection;
 using FacebookV1.CadenaResponsabilidad.Chain;
 using FacebookV1.CadenaResponsabilidad;
 using System.Data.SqlClient;
+using FacebookV1.Prototype;
 
 namespace FacebookV1
 {
@@ -276,9 +277,13 @@ namespace FacebookV1
                 }
                 else
                 {
-                    //Clone method
-                    labelNombre2.Text = labelNombre1.Text;
-                    textBoxPost2.Text = textBoxPost1.Text;
+                    Post post = new Post();
+                    post.nombre = labelNombre1.Text;
+                    post.post = textBoxPost1.Text;
+
+                    Post post2 = post.Clone();
+                    labelNombre2.Text = post2.nombre;
+                    textBoxPost2.Text = post2.post;
 
                     labelNombre1.Text = nombre + " " + apellido;
                     textBoxPost1.Text = textBox1.Text;
