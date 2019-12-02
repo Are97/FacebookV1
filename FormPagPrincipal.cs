@@ -26,7 +26,7 @@ namespace FacebookV1
             var connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ToString();
             _service = new DataService(connectionString);
             buttonPerfil.Text = _nombre;
-            List<string> opciones = new List<string>() { "Opciones","Inicio", "Perfil", "Buscar amigos","Modificar perfil" };
+            List<string> opciones = new List<string>() { "Opciones","Inicio", "Perfil", "Buscar amigos","Modificar perfil" ,"Cerrar sesión"};
             comboBoxOpciones.DataSource = opciones;
             textBoxNombreModificar.Text = _nombre;
             textBoxCorreoModificar.Text = _correo;
@@ -52,7 +52,14 @@ namespace FacebookV1
 
         private void buttonInicio_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Inicio");
+            pictureBoxModificar.Visible = false;
+            textBoxNombreModificar.Visible = false;
+            textBoxCorreoModificar.Visible = false;
+            textBoxContraseñaModificar.Visible = false;
+            textBoxContraseñaNuevaModificar.Visible = false;
+            textBoxContraseñaConfModificar.Visible = false;
+            buttonAceptar.Visible = false;
+            buttonPerfil.Text = nombre;
         }
 
         private void textBoxBuscar_Enter(object sender, EventArgs e)
@@ -83,9 +90,11 @@ namespace FacebookV1
                     textBoxContraseñaConfModificar.BringToFront();
                     buttonAceptar.Visible = true;
                     buttonAceptar.BringToFront();
-                    radioButtonCambiarContraseña.Visible = true;
-                    radioButtonCambiarContraseña.BringToFront();
-
+                    break;
+                case "Cerrar sesión":
+                    this.Hide();
+                    Form1 f1 = new Form1();
+                    f1.Show();
                     break;
                 default:
                     MessageBox.Show(comboBoxOpciones.Text);
@@ -127,23 +136,28 @@ namespace FacebookV1
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
             if(textBoxContraseñaModificar.Text == contra && textBoxContraseñaNuevaModificar.Text == textBoxContraseñaConfModificar.Text)
-            {
-                MessageBox.Show("Se cambiara la contra");
-                
-               // _service.UpdatePerfil(idpersona, nombre, correo, contra);
-                if (_service.UpdatePerfil(idpersona, nombre, correo, contra))
+            {   
+                if (_service.UpdatePerfil(idpersona, textBoxNombreModificar.Text, textBoxCorreoModificar.Text, textBoxContraseñaNuevaModificar.Text))
                 {
-                    MessageBox.Show("True");
+                    nombre = textBoxNombreModificar.Text;
+                    correo = textBoxCorreoModificar.Text;
+                    contra = textBoxContraseñaNuevaModificar.Text;
+                    buttonInicio_Click(sender,e);
                 }
                 else
                 {
-                    MessageBox.Show("false");
+                    MessageBox.Show("Problemas al modificar tu perfil");
                 }
             }
             else
             {
-                MessageBox.Show("No se cambiara la contra");
+                MessageBox.Show("Datos incorrectos");
             }
+        }
+
+        private void FormPagPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

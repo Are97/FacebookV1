@@ -111,6 +111,9 @@ namespace FacebookV1
             fr.Show();
         }
 
-        
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
