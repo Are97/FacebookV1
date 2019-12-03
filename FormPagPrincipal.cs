@@ -20,6 +20,8 @@ namespace FacebookV1
 {
     public partial class FormPagPrincipal : Form
     {
+        private string temp = "";
+        private string AmigosCount = "";
         private string contra = "";
         public string idpersona = "";
         public string nombre = "";
@@ -53,6 +55,7 @@ namespace FacebookV1
 
             contra = _contra;
             idpersona = _idpersona;
+            temp = _idpersona;
             nombre = _nombre;
             correo = _correo;
             apellido = _apellido;
@@ -83,11 +86,17 @@ namespace FacebookV1
             string connectionString;
             connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             ReadOrderDataPerfil(connectionString);
+            labelNumAmigos.Visible = true;
+            labelAmigosCount.Visible = true;
+            buttonAgregar.Visible = false;
+            labelNumAmigos.Text = AmigosCount;
+            
         }
         private void ReadOrderDataPerfil(string connectionString)
         {
             string queryString =
                 "select top 1 * from persona where correo = '" + correo + "'";
+            string queryString2 = "select COUNT(*) from amigos where idamigo = " + temp;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -109,6 +118,35 @@ namespace FacebookV1
                 }
 
             }
+
+
+
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString2, connection);
+                connection.Open();
+                if (command.ExecuteScalar() != null)
+                {
+                    buttonMas.Visible = true;
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ReadSingleRow2((IDataRecord)reader);
+                    }
+                    reader.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Problemas al acceder a tu perfil");
+                }
+
+            }
+        }
+        private void ReadSingleRow2(IDataRecord record)
+        {
+            AmigosCount = String.Format("{0}", record[0]);
         }
 
 
@@ -182,13 +220,11 @@ namespace FacebookV1
         string sexoAmigo = "";
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
+            buttonAgregar.Visible = true;
+            labelNumAmigos.Visible = false;
+            labelAmigosCount.Visible = false;
             numpost = 1;
             timelineMethod.SetTimelineStrategy(new Amigo()); //Strategy
-            //Strategy
-            //TimelineMethod timelineMethod = new TimelineMethod();
-            //timelineMethod.SetPrueba("Amigo");
-            //timelineMethod.SetTimelineStrategy(new Amigo());
-            //timelineMethod.Timeline();
 
             string connectionString;
             connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -265,7 +301,7 @@ namespace FacebookV1
         {
             string queryString =
                 "select  * from post where idpersona = '" + _idpersona + "'";
-
+            string queryString3 = "select * from amigos where idamigo = "+idamigo+" and idpersona = "+temp;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -306,6 +342,12 @@ namespace FacebookV1
                 }
 
             }
+
+
+
+
+
+
         }
 
         TimelineMethod timelineMethod = new TimelineMethod(); //Strategy
@@ -613,6 +655,11 @@ namespace FacebookV1
                 labelNombre2.Text = timelineMethod.getNombre(numpost);
                 textBoxPost2.Text = timelineMethod.getPost(numpost);
             }
+        }
+
+        private void buttonAgregar_Click(object sender, EventArgs e)
+        {
+            _service.AddAmigo1(idamigo,temp);
         }
     }
 }

@@ -5,11 +5,16 @@ Patrones de Diseño
 
 Clone de Facebook
 Para la base de datos que sostiene este proyecto utilizamos SQL server, ahí es donde se tienen guardadas las diferentes tablas y procemdimientos.
-Utilizamos 2 tablas:
+Utilizamos 3 tablas:
 	- Persona
 		-idpersona(Para identificar, es único), nombre, apellido, correo, contraseña, día de nacimiento, mes de nacimiento, año de nacimiento y sexo.
 	-Post
 		-idpost(Para identificar, es único), idpersona(La que realizó el post), Posr, url de la imagen, likes y comentarios.
+	-Amigos
+		-idamigo y idpersona
+
+Procedimientos:
+	-
 
 El proyecto se realizó en winForms, donde a cada componente (TextBox, Label, PictureBox, Button, etc), se le asignaba las propiedades adecuadas para
 su máximo parecido con la plataforma objetivo; esto, ademas del uso de imagenes como fondo, nos permite dar la ilusión de estar realmente en Facebook.

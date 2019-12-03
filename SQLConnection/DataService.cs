@@ -38,5 +38,29 @@ namespace FacebookV1.SQLConnection
                 return false;
             }
         }
+
+        public bool AddAmigo1(string idamigo, string idpersona)
+        {
+            try
+            {
+                return _dataService.AddAmigo1(idamigo, idpersona);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool AmigosCount(string idpersona)
+        {
+            try
+            {
+                return _dataService.AmigosCount(idpersona);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }
