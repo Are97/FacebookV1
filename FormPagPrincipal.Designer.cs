@@ -66,15 +66,16 @@
             this.buttonComments2 = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.buttonAgregar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.labelPanelSexo = new System.Windows.Forms.Label();
             this.labelPanelNacimiento = new System.Windows.Forms.Label();
             this.labelPanelCorreo = new System.Windows.Forms.Label();
             this.labelPanelNombre = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.buttonMas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPublicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNohacercaso)).BeginInit();
@@ -636,63 +637,6 @@
             this.panelInfo.TabIndex = 45;
             this.panelInfo.Visible = false;
             // 
-            // buttonAgregar
-            // 
-            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.buttonAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAgregar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonAgregar.FlatAppearance.BorderSize = 0;
-            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar.ForeColor = System.Drawing.Color.White;
-            this.buttonAgregar.Location = new System.Drawing.Point(342, 88);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(97, 36);
-            this.buttonAgregar.TabIndex = 26;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 21);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Nombre";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 21);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Correo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 21);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Nacimiento";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 21);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Sexo";
-            // 
             // labelPanelSexo
             // 
             this.labelPanelSexo.AutoSize = true;
@@ -737,12 +681,89 @@
             this.labelPanelNombre.TabIndex = 31;
             this.labelPanelNombre.Text = "Nombre";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 21);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Sexo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 21);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Nacimiento";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 21);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Correo";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 21);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Nombre";
+            // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAgregar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAgregar.FlatAppearance.BorderSize = 0;
+            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.ForeColor = System.Drawing.Color.White;
+            this.buttonAgregar.Location = new System.Drawing.Point(342, 88);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(97, 36);
+            this.buttonAgregar.TabIndex = 26;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.UseVisualStyleBackColor = false;
+            // 
+            // buttonMas
+            // 
+            this.buttonMas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonMas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.buttonMas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMas.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonMas.FlatAppearance.BorderSize = 0;
+            this.buttonMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMas.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMas.ForeColor = System.Drawing.Color.White;
+            this.buttonMas.Location = new System.Drawing.Point(572, 610);
+            this.buttonMas.Name = "buttonMas";
+            this.buttonMas.Size = new System.Drawing.Size(88, 36);
+            this.buttonMas.TabIndex = 46;
+            this.buttonMas.Text = "Más";
+            this.buttonMas.UseVisualStyleBackColor = true;
+            this.buttonMas.Visible = false;
+            this.buttonMas.Click += new System.EventHandler(this.buttonMas_Click);
+            // 
             // FormPagPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FacebookV1.Properties.Resources.Timeline;
             this.ClientSize = new System.Drawing.Size(685, 736);
+            this.Controls.Add(this.buttonMas);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonComments2);
@@ -844,5 +865,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.Button buttonMas;
     }
 }

@@ -14,6 +14,7 @@ using FacebookV1.CadenaResponsabilidad;
 using System.Data.SqlClient;
 using FacebookV1.Prototype;
 using FacebookV1.Memento;
+using FacebookV1.Strategy;
 
 namespace FacebookV1
 {
@@ -25,6 +26,7 @@ namespace FacebookV1
         public string correo = "";
         public string apellido = "";
         private static DataService _service;
+        int numpost = 1;
 
         //Memento
         Caretaker caretaker = new Caretaker();
@@ -76,6 +78,8 @@ namespace FacebookV1
 
         private void buttonPerfil_Click(object sender, EventArgs e)
         {
+            numpost = 1;
+            timelineMethod.SetTimelineStrategy(new Perfil()); //Strategy
             string connectionString;
             connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             ReadOrderDataPerfil(connectionString);
@@ -91,6 +95,7 @@ namespace FacebookV1
                 connection.Open();
                 if (command.ExecuteScalar() != null)
                 {
+                    buttonMas.Visible = true;
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -109,6 +114,13 @@ namespace FacebookV1
 
         private void buttonInicio_Click(object sender, EventArgs e)
         {
+            numpost = 1;
+            //Strategy
+            //TimelineMethod timelineMethod = new TimelineMethod();
+            //timelineMethod.SetPrueba("Inicio");
+            //timelineMethod.SetTimelineStrategy(new Inicio());
+            //timelineMethod.Timeline();
+
             pictureBoxModificar.Visible = false;
             textBoxNombreModificar.Visible = false;
             textBoxCorreoModificar.Visible = false;
@@ -119,7 +131,7 @@ namespace FacebookV1
             pictureBoxNohacercaso.Visible = false;
             buttonReset.Visible = false;
             panelInfo.Visible = false;
-
+            buttonMas.Visible = false;
             if (labelNombre1.Text != "")
             {
                 labelNombre1.Visible = true;
@@ -143,6 +155,7 @@ namespace FacebookV1
                 textBoxPost2.Visible = true;
                 buttonLikes2.Visible = true;
                 buttonComments2.Visible = true;
+                buttonMas.Visible = true;
             }
             
 
@@ -169,6 +182,14 @@ namespace FacebookV1
         string sexoAmigo = "";
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
+            numpost = 1;
+            timelineMethod.SetTimelineStrategy(new Amigo()); //Strategy
+            //Strategy
+            //TimelineMethod timelineMethod = new TimelineMethod();
+            //timelineMethod.SetPrueba("Amigo");
+            //timelineMethod.SetTimelineStrategy(new Amigo());
+            //timelineMethod.Timeline();
+
             string connectionString;
             connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             ReadOrderDataBuscar(connectionString);
@@ -184,6 +205,7 @@ namespace FacebookV1
                 connection.Open();
                 if (command.ExecuteScalar() != null)
                 {
+                    buttonMas.Visible = true;
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -212,7 +234,6 @@ namespace FacebookV1
             {
                 sexoAmigo = "Mujer";
             }
-
             //Aqui agregar la interfaz grafica
             textBoxBuscar.ForeColor = System.Drawing.Color.Gray;
             textBoxBuscar.Text = "Buscar";
@@ -251,11 +272,14 @@ namespace FacebookV1
                 connection.Open();
                 if (command.ExecuteScalar() != null)
                 {
+                    buttonMas.Visible = true;
                     SqlDataReader reader = command.ExecuteReader();
+                    
                     while (reader.Read())
                     {
                         ReadSingleRowPost((IDataRecord)reader);
                     }
+                    //Console.WriteLine(timelineMethod.getCount().ToString());
                     reader.Close();
                 }
                 else
@@ -283,11 +307,19 @@ namespace FacebookV1
 
             }
         }
+
+        TimelineMethod timelineMethod = new TimelineMethod(); //Strategy
+        
         public Stack<Publicacion> publicacions = new Stack<Publicacion>();
         private void ReadSingleRowPost(IDataRecord record)
         {
             Publicacion post1 = new Publicacion(String.Format("{0}", record[0]), String.Format("{0}", record[1]), String.Format("{0}", record[2]), String.Format("{0}", record[3]), String.Format("{0}", record[4]), String.Format("{0}", record[5]), nombreAmigo);
             publicacions.Push(post1);
+
+            //Strategy
+            timelineMethod.SetPrueba(String.Format("{0}", record[0]), String.Format("{0}", record[1]), String.Format("{0}", record[2]), String.Format("{0}", record[3]), String.Format("{0}", record[4]), String.Format("{0}", record[5]), nombreAmigo);
+            timelineMethod.Timeline();
+            
             if (labelNombre1.Text == "")
             {
                 labelNombre1.Text = nombreAmigo;
@@ -303,6 +335,7 @@ namespace FacebookV1
                     textBoxPost1.Visible = true;
                     buttonLikes1.Visible = true;
                     buttonComments1.Visible = true;
+                    buttonMas.Visible = false;
                 }
                 if (labelNombre2.Text != "")
                 {
@@ -315,11 +348,13 @@ namespace FacebookV1
                     textBoxPost2.Visible = true;
                     buttonLikes2.Visible = true;
                     buttonComments2.Visible = true;
+                    buttonMas.Visible = true;
                 }
                 //buttonInicio_Click(sender, e);
             }
             else
             {
+                buttonMas.Visible = true;
                 Post post = new Post();
                 post.nombre = labelNombre1.Text;
                 post.post = textBoxPost1.Text;
@@ -405,6 +440,7 @@ namespace FacebookV1
                     buttonComments1.Visible = false;
                     buttonComments2.Visible = false;
                     panelInfo.Visible = false;
+                    buttonMas.Visible = false;
 
                     buttonAceptarPost.Visible = false;
                     textBox1.Visible = false;
@@ -564,6 +600,28 @@ namespace FacebookV1
                 textBoxContraseñaConfModificar.ForeColor = System.Drawing.Color.Gray;
                 textBoxContraseñaConfModificar.Text = "Contraseña";
             }
+        }
+        
+        private void buttonMas_Click(object sender, EventArgs e)
+        {
+            int i = timelineMethod.getCount() - 1;
+            MessageBox.Show(timelineMethod.getPost(0));
+            
+
+
+            if (numpost < i)
+            {
+                labelNombre1.Text = timelineMethod.getNombre(numpost);
+                textBoxPost1.Text = timelineMethod.getPost(numpost);
+                numpost++;
+                labelNombre2.Text = timelineMethod.getNombre(numpost);
+                textBoxPost2.Text = timelineMethod.getPost(numpost);
+            }
+            else
+            {
+
+            }
+            
         }
     }
 }
