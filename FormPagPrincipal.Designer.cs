@@ -78,7 +78,7 @@
             this.buttonMas = new System.Windows.Forms.Button();
             this.labelAmigosCount = new System.Windows.Forms.Label();
             this.labelNumAmigos = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPublicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNohacercaso)).BeginInit();
@@ -625,7 +625,7 @@
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.White;
-            this.panelInfo.Controls.Add(this.button1);
+            this.panelInfo.Controls.Add(this.buttonEliminar);
             this.panelInfo.Controls.Add(this.labelNumAmigos);
             this.panelInfo.Controls.Add(this.labelAmigosCount);
             this.panelInfo.Controls.Add(this.labelPanelSexo);
@@ -785,23 +785,24 @@
             this.labelNumAmigos.TabIndex = 36;
             this.labelNumAmigos.Text = "0";
             // 
-            // button1
+            // buttonEliminar
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(342, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 36);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
+            this.buttonEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonEliminar.BackColor = System.Drawing.Color.Red;
+            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonEliminar.FlatAppearance.BorderSize = 0;
+            this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminar.ForeColor = System.Drawing.Color.White;
+            this.buttonEliminar.Location = new System.Drawing.Point(342, 88);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(97, 36);
+            this.buttonEliminar.TabIndex = 37;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.UseVisualStyleBackColor = false;
+            this.buttonEliminar.Visible = false;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // FormPagPrincipal
             // 
@@ -914,6 +915,6 @@
         private System.Windows.Forms.Button buttonMas;
         private System.Windows.Forms.Label labelNumAmigos;
         private System.Windows.Forms.Label labelAmigosCount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEliminar;
     }
 }

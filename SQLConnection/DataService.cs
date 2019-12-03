@@ -62,5 +62,17 @@ namespace FacebookV1.SQLConnection
                 return false;
             }
         }
+
+        public bool DeleteAmigo(string idamigo, string idpersona)
+        {
+            try
+            {
+                return _dataService.DeleteAmigo(idamigo, idpersona);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

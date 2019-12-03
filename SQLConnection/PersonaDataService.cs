@@ -261,6 +261,61 @@ namespace FacebookV1.SQLConnection
         }
 
 
+        public bool DeleteAmigo(string idamigo, string idpersona)
+        {
+            var result = false;
+            try
+            {
+                if (_client.Open())
+                {
+                    var command = new SqlCommand
+                    {
+                        Connection = _client.Conecction,
+                        CommandText = "DeleteAmigo",
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    var par1 = new SqlParameter("@idamigo", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Input,
+                        Value = System.Convert.ToInt32(idamigo)
+                    };
+
+                    var par2 = new SqlParameter("@idpersona", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Input,
+                        Value = System.Convert.ToInt32(idpersona)
+                    };
+
+                    var par3 = new SqlParameter("@haserror", SqlDbType.Bit)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+
+                    command.Parameters.Add(par1);
+                    command.Parameters.Add(par2);
+                    command.Parameters.Add(par3);
+
+                    command.ExecuteNonQuery();
+
+                    result = !Convert.ToBoolean(command.Parameters["@haserror"].Value.ToString());
+
+
+                }
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            finally
+            {
+                _client.Close();
+            }
+
+            return result;
+        }
+
+
 
 
     }

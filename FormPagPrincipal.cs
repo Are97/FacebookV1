@@ -22,6 +22,7 @@ namespace FacebookV1
     {
         private string temp = "";
         private string AmigosCount = "";
+        bool sonAmigos = false;
         private string contra = "";
         public string idpersona = "";
         public string nombre = "";
@@ -96,7 +97,7 @@ namespace FacebookV1
         {
             string queryString =
                 "select top 1 * from persona where correo = '" + correo + "'";
-            string queryString2 = "select COUNT(*) from amigos where idamigo = " + temp;
+            string queryString2 = "select COUNT(*) from amigos where idpersona = " + temp;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -129,7 +130,7 @@ namespace FacebookV1
                 connection.Open();
                 if (command.ExecuteScalar() != null)
                 {
-                    buttonMas.Visible = true;
+                    
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -147,6 +148,7 @@ namespace FacebookV1
         private void ReadSingleRow2(IDataRecord record)
         {
             AmigosCount = String.Format("{0}", record[0]);
+            labelNumAmigos.Text = String.Format("{0}", record[0]);
         }
 
 
@@ -344,7 +346,25 @@ namespace FacebookV1
             }
 
 
-
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString3, connection);
+                connection.Open();
+                if (command.ExecuteScalar() != null)
+                {
+                    sonAmigos = true;
+                    buttonEliminar.Visible = true;
+                    buttonAgregar.Visible = false;
+                    buttonEliminar.BringToFront();
+                }
+                else
+                {
+                    sonAmigos = false;
+                    buttonEliminar.Visible = false;
+                    buttonAgregar.Visible = true;
+                    buttonAgregar.BringToFront();
+                }
+            }
 
 
 
@@ -659,7 +679,31 @@ namespace FacebookV1
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            _service.AddAmigo1(idamigo,temp);
+            if (_service.AddAmigo1(idamigo, temp))
+            {
+                buttonEliminar.Visible = true;
+                buttonAgregar.Visible = false;
+                buttonEliminar.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Problemas al agregar\n a tu amigo");
+            }
+            
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            if (_service.DeleteAmigo(idamigo, temp))
+            {
+                buttonEliminar.Visible = false;
+                buttonAgregar.Visible = true;
+                buttonAgregar.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Problemas al eliminar\n a tu amigo");
+            }
         }
     }
 }
