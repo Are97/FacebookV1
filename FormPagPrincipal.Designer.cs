@@ -429,6 +429,7 @@
             this.buttonMeGusta1.TabIndex = 31;
             this.buttonMeGusta1.UseVisualStyleBackColor = true;
             this.buttonMeGusta1.Visible = false;
+            this.buttonMeGusta1.Click += new System.EventHandler(this.buttonMeGusta1_Click);
             // 
             // buttonComentar1
             // 

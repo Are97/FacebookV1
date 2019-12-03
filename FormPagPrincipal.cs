@@ -705,5 +705,21 @@ namespace FacebookV1
                 MessageBox.Show("Problemas al eliminar\n a tu amigo");
             }
         }
+
+        private void buttonMeGusta1_Click(object sender, EventArgs e)
+        {
+            string postA = textBoxPost1.Text;
+            if (_service.DarLike1(postA))
+            {
+                int likes = System.Convert.ToInt32(labelMeGusta1.Text);
+                likes++;
+                labelMeGusta1.Text = likes.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo dar Like");
+            }
+            
+        }
     }
 }

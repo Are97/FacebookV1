@@ -152,3 +152,18 @@ begin catch
 	set @haserror = 1;
 end catch
 go
+
+create procedure DarLike1
+(
+	@post nvarchar(150),
+	@haserror bit out
+)
+as
+begin try
+	set @haserror = 0;
+	update post set likes = likes + 1 where post = @post
+end try
+begin catch
+	set @haserror = 1;
+end catch
+go

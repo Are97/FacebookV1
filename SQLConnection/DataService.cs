@@ -74,5 +74,16 @@ namespace FacebookV1.SQLConnection
                 return false;
             }
         }
+        public bool DarLike1(string post)
+        {
+            try
+            {
+                return _dataService.DarLike1(post);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

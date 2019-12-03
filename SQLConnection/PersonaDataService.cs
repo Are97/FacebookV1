@@ -317,6 +317,54 @@ namespace FacebookV1.SQLConnection
 
 
 
+        public bool DarLike1(string post)
+        {
+            var result = false;
+            try
+            {
+                if (_client.Open())
+                {
+                    var command = new SqlCommand
+                    {
+                        Connection = _client.Conecction,
+                        CommandText = "DarLike1",
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    var par1 = new SqlParameter("@post", SqlDbType.NVarChar)
+                    {
+                        Direction = ParameterDirection.Input,
+                        Value = post
+                    };
+
+                    var par2 = new SqlParameter("@haserror", SqlDbType.Bit)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+
+                    command.Parameters.Add(par1);
+                    command.Parameters.Add(par2);
+
+                    command.ExecuteNonQuery();
+
+                    result = !Convert.ToBoolean(command.Parameters["@haserror"].Value.ToString());
+
+
+                }
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            finally
+            {
+                _client.Close();
+            }
+
+            return result;
+        }
+
+
 
     }
 }
