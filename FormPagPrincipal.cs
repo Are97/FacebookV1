@@ -605,10 +605,6 @@ namespace FacebookV1
         private void buttonMas_Click(object sender, EventArgs e)
         {
             int i = timelineMethod.getCount() - 1;
-            MessageBox.Show(timelineMethod.getPost(0));
-            
-
-
             if (numpost < i)
             {
                 labelNombre1.Text = timelineMethod.getNombre(numpost);
@@ -617,11 +613,6 @@ namespace FacebookV1
                 labelNombre2.Text = timelineMethod.getNombre(numpost);
                 textBoxPost2.Text = timelineMethod.getPost(numpost);
             }
-            else
-            {
-
-            }
-            
         }
     }
 }

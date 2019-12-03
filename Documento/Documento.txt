@@ -1,0 +1,36 @@
+﻿Pablo Arellano Ramírez España
+Universidad Panamericana Campus Bonaterra
+Patrones de Diseño 
+2019
+
+Clone de Facebook
+Para la base de datos que sostiene este proyecto utilizamos SQL server, ahí es donde se tienen guardadas las diferentes tablas y procemdimientos.
+Utilizamos 2 tablas:
+	- Persona
+		-idpersona(Para identificar, es único), nombre, apellido, correo, contraseña, día de nacimiento, mes de nacimiento, año de nacimiento y sexo.
+	-Post
+		-idpost(Para identificar, es único), idpersona(La que realizó el post), Posr, url de la imagen, likes y comentarios.
+
+El proyecto se realizó en winForms, donde a cada componente (TextBox, Label, PictureBox, Button, etc), se le asignaba las propiedades adecuadas para
+su máximo parecido con la plataforma objetivo; esto, ademas del uso de imagenes como fondo, nos permite dar la ilusión de estar realmente en Facebook.
+
+Para el buen funcionamiento del proyecto se utilizaron varios patrones de diseño.
+	-Singleton
+		- Se utilizó para la mayoria de las conexiones a la base de datos, esto con el proposito de solo crear una instancia de la conexion y que no se permita 
+		acceder a la base de datos mienras esta ya se encuentra abierta.
+	-Prototype
+		- Se utilizó a la hora de realizar un Post, ya que tenemos la necesidad de Clonar el post de hasta arriba y ponerlo en el siguiente espacio para Post,
+		y con esto tener el espacio para que el Post realizado se encuentre hasta arriba, como post principal.
+	-Memento
+		- Se utilizó al momento de tener problemas al modificar tu perfil y querer restablecer tus datos. Ya que este patron nos permite guardar varios estados de 
+		un objeto y regresar a su estado anterior con un click.
+	-Cadena de Responsabilidades
+		-Se utilizó este patron con el ComboBox de Opciones, al momento de presionar el boton "Ir", ya que ese boton va a realizar una tarea, pero será diferente 
+		segun el contenido del ComboBox; por lo que el request va pasando a lo largo de la cadena de opciones hasta encontrar la que se hace cargo de dicha tarea.
+	-Strategy
+		-A la hora de mostrar el Muro(Timeline), se sigue un mismo proceso, pero los datos(Post) a mostrar son diferentes segun el Muro que se este viendo, es por 
+		eso que tenemos un solo encargado de mostrar el Muro pero con varias estategias sobre que mostrar, estas dependen si estas viendo tu Perfil, el de un amigo
+		o el de todos(Inicio o Principal).
+
+Los patrones de Diseño te permiten tener un código más limpio y entendible; además de la oportunidad de escalar tu proyecto de manera sencilla y eficiente.
+Es de gran importancia tener un basto conocimiento sobre los patrones de Diseño, sus objetivos e implementaciones para poder desarrollar código de la mejor manera posible.

@@ -128,6 +128,7 @@
     <None Include="Imgs\Aceptar.png" />
     <None Include="Imgs\Comentar.png" />
     <None Include="Imgs\Comments.png" />
+    <Content Include="Documento\Documento.txt" />
     <Content Include="Imgs\Icon.ico" />
     <None Include="Imgs\Publicar.png" />
     <None Include="Imgs\MeGusta.png" />
