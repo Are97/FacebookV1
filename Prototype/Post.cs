@@ -32,7 +32,7 @@ namespace FacebookV1.Prototype
 
         public Post Clone()
         {
-            return new Post { nombre = nombre, urlimg = urlimg, post = post};
+            return new Post { nombre = nombre, urlimg = urlimg, post = post, Likes=Likes};
         }
     }
 }

@@ -29,5 +29,10 @@ namespace FacebookV1.Strategy
         {
             return StackPerfil.ElementAt(idx).post;
         }
+
+        public override string getLikes(int idx)
+        {
+            return StackPerfil.ElementAt(idx).Likes;
+        }
     }
 }

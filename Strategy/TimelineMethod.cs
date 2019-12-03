@@ -50,5 +50,9 @@ namespace FacebookV1.Strategy
         {
             return timelineStrategy.getPost(idx);
         }
+        public string getLikes(int idx)
+        {
+            return timelineStrategy.getLikes(idx);
+        }
     }
 }

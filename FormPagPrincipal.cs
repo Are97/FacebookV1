@@ -386,6 +386,7 @@ namespace FacebookV1
             {
                 labelNombre1.Text = nombreAmigo;
                 textBoxPost1.Text = String.Format("{0}", record[2]);
+                labelMeGusta1.Text = String.Format("{0}", record[4]);
                 if (labelNombre1.Text != "")
                 {
                     labelNombre1.Visible = true;
@@ -420,13 +421,16 @@ namespace FacebookV1
                 Post post = new Post();
                 post.nombre = labelNombre1.Text;
                 post.post = textBoxPost1.Text;
+                post.Likes = labelMeGusta1.Text;
 
                 Post post2 = post.Clone();
                 labelNombre2.Text = post2.nombre;
                 textBoxPost2.Text = post2.post;
+                labelMeGusta2.Text = post2.Likes;
 
                 labelNombre1.Text = nombreAmigo;
                 textBoxPost1.Text = String.Format("{0}", record[2]);
+                labelMeGusta1.Text = String.Format("{0}", record[4]);
                 if (labelNombre1.Text != "")
                 {
                     labelNombre1.Visible = true;
@@ -612,10 +616,11 @@ namespace FacebookV1
         {
             if(_service.Postear(idpersona, textBox1.Text, ""))
             {
-                if(labelNombre1.Text == "")
+                if (labelNombre1.Text == "")
                 {
                     labelNombre1.Text = nombre + " " + apellido;
                     textBoxPost1.Text = textBox1.Text;
+                    labelMeGusta1.Text = "0";
                     buttonInicio_Click(sender, e);
                 }
                 else
@@ -623,13 +628,16 @@ namespace FacebookV1
                     Post post = new Post();
                     post.nombre = labelNombre1.Text;
                     post.post = textBoxPost1.Text;
+                    post.Likes = labelMeGusta1.Text;
 
                     Post post2 = post.Clone();
                     labelNombre2.Text = post2.nombre;
                     textBoxPost2.Text = post2.post;
+                    labelMeGusta2.Text = post2.Likes;
 
                     labelNombre1.Text = nombre + " " + apellido;
                     textBoxPost1.Text = textBox1.Text;
+                    labelMeGusta1.Text = "0";
                     buttonInicio_Click(sender, e);
                 }                
             }
@@ -671,9 +679,11 @@ namespace FacebookV1
             {
                 labelNombre1.Text = timelineMethod.getNombre(numpost);
                 textBoxPost1.Text = timelineMethod.getPost(numpost);
+                labelMeGusta1.Text = timelineMethod.getLikes(numpost);
                 numpost++;
                 labelNombre2.Text = timelineMethod.getNombre(numpost);
                 textBoxPost2.Text = timelineMethod.getPost(numpost);
+                labelMeGusta2.Text = timelineMethod.getLikes(numpost);
             }
         }
 

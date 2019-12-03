@@ -13,6 +13,11 @@ namespace FacebookV1.Strategy
             return 0;
         }
 
+        public override string getLikes(int idx)
+        {
+            return "";
+        }
+
         public override string getNombre(int idx)
         {
             return "";

@@ -16,6 +16,11 @@ namespace FacebookV1.Strategy
             return StackAmigo.Count;
         }
 
+        public override string getLikes(int idx)
+        {
+            return StackAmigo.ElementAt(idx).Likes;
+        }
+
         public override string getNombre(int idx)
         {
             return StackAmigo.ElementAt(idx).nombre;

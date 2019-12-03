@@ -12,5 +12,6 @@ namespace FacebookV1.Strategy
         public abstract int getCount();
         public abstract string getNombre(int idx);
         public abstract string getPost(int idx);
+        public abstract string getLikes(int idx);
     }
 }
