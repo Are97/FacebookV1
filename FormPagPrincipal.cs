@@ -118,6 +118,7 @@ namespace FacebookV1
             buttonAceptar.Visible = false;
             pictureBoxNohacercaso.Visible = false;
             buttonReset.Visible = false;
+            panelInfo.Visible = false;
 
             if (labelNombre1.Text != "")
             {
@@ -213,18 +214,154 @@ namespace FacebookV1
             }
 
             //Aqui agregar la interfaz grafica
-            Console.WriteLine(idamigo);
-            Console.WriteLine(nombreAmigo);
-            Console.WriteLine(correoAmigo);
-            Console.WriteLine(cumpleaños);
-            Console.WriteLine(sexoAmigo);
+            textBoxBuscar.ForeColor = System.Drawing.Color.Gray;
+            textBoxBuscar.Text = "Buscar";
+
+            pictureBoxModificar.Visible = false;
+            textBoxNombreModificar.Visible = false;
+            textBoxCorreoModificar.Visible = false;
+            textBoxContraseñaModificar.Visible = false;
+            textBoxContraseñaNuevaModificar.Visible = false;
+            textBoxContraseñaConfModificar.Visible = false;
+            buttonAceptar.Visible = false;
+            pictureBoxNohacercaso.Visible = false;
+            buttonReset.Visible = false;
+            panelInfo.Visible = false;
+
+            panelInfo.Visible = true;
+            panelInfo.BringToFront();
+            labelPanelCorreo.Text = correoAmigo;
+            labelPanelNacimiento.Text = cumpleaños;
+            labelPanelNombre.Text = nombreAmigo;
+            labelPanelSexo.Text = sexoAmigo;
+
+            //Otra conexion para sacar los post
+            string connectionString;
+            connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            ReadOrderDataPost(connectionString, idamigo);
+        }
+        private void ReadOrderDataPost(string connectionString, string _idpersona)
+        {
+            string queryString =
+                "select  * from post where idpersona = '" + _idpersona + "'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+                if (command.ExecuteScalar() != null)
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ReadSingleRowPost((IDataRecord)reader);
+                    }
+                    reader.Close();
+                }
+                else
+                {
+                    labelNombre1.Text = "";
+                    labelNombre1.Visible = false;
+                    labelComentarios1.Visible = false;
+                    labelMeGusta1.Visible = false;
+                    buttonMeGusta1.Visible = false;
+                    buttonComentar1.Visible = false;
+                    pictureBoxImg1.Visible = false;
+                    textBoxPost1.Visible = false;
+                    buttonLikes1.Visible = false;
+                    buttonComments1.Visible = false;
+                    labelNombre2.Visible = false;
+                    labelComentarios2.Visible = false;
+                    labelMeGusta2.Visible = false;
+                    buttonMeGusta2.Visible = false;
+                    buttonComentar2.Visible = false;
+                    pictureBoxImg2.Visible = false;
+                    textBoxPost2.Visible = false;
+                    buttonLikes2.Visible = false;
+                    buttonComments2.Visible = false;
+                    MessageBox.Show("Post no encontrado");
+                }
+
+            }
+        }
+        private void ReadSingleRowPost(IDataRecord record)
+        {
+            if (labelNombre1.Text == "")
+            {
+                labelNombre1.Text = nombreAmigo;
+                textBoxPost1.Text = String.Format("{0}", record[2]);
+                if (labelNombre1.Text != "")
+                {
+                    labelNombre1.Visible = true;
+                    labelComentarios1.Visible = true;
+                    labelMeGusta1.Visible = true;
+                    buttonMeGusta1.Visible = true;
+                    buttonComentar1.Visible = true;
+                    pictureBoxImg1.Visible = true;
+                    textBoxPost1.Visible = true;
+                    buttonLikes1.Visible = true;
+                    buttonComments1.Visible = true;
+                }
+                if (labelNombre2.Text != "")
+                {
+                    labelNombre2.Visible = true;
+                    labelComentarios2.Visible = true;
+                    labelMeGusta2.Visible = true;
+                    buttonMeGusta2.Visible = true;
+                    buttonComentar2.Visible = true;
+                    pictureBoxImg2.Visible = true;
+                    textBoxPost2.Visible = true;
+                    buttonLikes2.Visible = true;
+                    buttonComments2.Visible = true;
+                }
+                //buttonInicio_Click(sender, e);
+            }
+            else
+            {
+                Post post = new Post();
+                post.nombre = labelNombre1.Text;
+                post.post = textBoxPost1.Text;
+
+                Post post2 = post.Clone();
+                labelNombre2.Text = post2.nombre;
+                textBoxPost2.Text = post2.post;
+
+                labelNombre1.Text = nombreAmigo;
+                textBoxPost1.Text = String.Format("{0}", record[2]);
+                if (labelNombre1.Text != "")
+                {
+                    labelNombre1.Visible = true;
+                    labelComentarios1.Visible = true;
+                    labelMeGusta1.Visible = true;
+                    buttonMeGusta1.Visible = true;
+                    buttonComentar1.Visible = true;
+                    pictureBoxImg1.Visible = true;
+                    textBoxPost1.Visible = true;
+                    buttonLikes1.Visible = true;
+                    buttonComments1.Visible = true;
+                }
+                if (labelNombre2.Text != "")
+                {
+                    labelNombre2.Visible = true;
+                    labelComentarios2.Visible = true;
+                    labelMeGusta2.Visible = true;
+                    buttonMeGusta2.Visible = true;
+                    buttonComentar2.Visible = true;
+                    pictureBoxImg2.Visible = true;
+                    textBoxPost2.Visible = true;
+                    buttonLikes2.Visible = true;
+                    buttonComments2.Visible = true;
+                }
+                //buttonInicio_Click(sender, e);
+            }
+            Console.WriteLine(record);
         }
 
 
 
 
 
-        private void buttonIr_Click(object sender, EventArgs e)
+            private void buttonIr_Click(object sender, EventArgs e)
         {   
             Request request = new Request(comboBoxOpciones.Text);
             EBA.handleRequest(request);
@@ -265,6 +402,7 @@ namespace FacebookV1
                     buttonLikes2.Visible = false;
                     buttonComments1.Visible = false;
                     buttonComments2.Visible = false;
+                    panelInfo.Visible = false;
 
                     buttonAceptarPost.Visible = false;
                     textBox1.Visible = false;
