@@ -279,13 +279,15 @@ namespace FacebookV1
                     textBoxPost2.Visible = false;
                     buttonLikes2.Visible = false;
                     buttonComments2.Visible = false;
-                    MessageBox.Show("Post no encontrado");
                 }
 
             }
         }
+        public Stack<Publicacion> publicacions = new Stack<Publicacion>();
         private void ReadSingleRowPost(IDataRecord record)
         {
+            Publicacion post1 = new Publicacion(String.Format("{0}", record[0]), String.Format("{0}", record[1]), String.Format("{0}", record[2]), String.Format("{0}", record[3]), String.Format("{0}", record[4]), String.Format("{0}", record[5]), nombreAmigo);
+            publicacions.Push(post1);
             if (labelNombre1.Text == "")
             {
                 labelNombre1.Text = nombreAmigo;
