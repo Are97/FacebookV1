@@ -13,6 +13,7 @@ using FacebookV1.CadenaResponsabilidad.Chain;
 using FacebookV1.CadenaResponsabilidad;
 using System.Data.SqlClient;
 using FacebookV1.Prototype;
+using FacebookV1.Memento;
 
 namespace FacebookV1
 {
@@ -24,6 +25,10 @@ namespace FacebookV1
         public string correo = "";
         public string apellido = "";
         private static DataService _service;
+
+        //Memento
+        Caretaker caretaker = new Caretaker();
+        Originator orig = new Originator();
 
         //Chain of Responsability
         EncargadoBuscarAmigos EBA = new EncargadoBuscarAmigos();
@@ -84,8 +89,9 @@ namespace FacebookV1
             textBoxContraseñaConfModificar.Visible = false;
             buttonAceptar.Visible = false;
             pictureBoxNohacercaso.Visible = false;
+            buttonReset.Visible = false;
 
-            if(labelNombre1.Text != "")
+            if (labelNombre1.Text != "")
             {
                 labelNombre1.Visible = true;
                 labelComentarios1.Visible = true;
@@ -151,6 +157,8 @@ namespace FacebookV1
                     textBoxContraseñaNuevaModificar.BringToFront();
                     textBoxContraseñaConfModificar.Visible = true;
                     textBoxContraseñaConfModificar.BringToFront();
+                    buttonReset.Visible = true;
+                    buttonReset.BringToFront();
 
                     labelNombre1.Visible = false;
                     labelNombre2.Visible = false;
@@ -177,6 +185,11 @@ namespace FacebookV1
                     buttonAceptar.Visible = true;
                     buttonAceptar.BringToFront();
                     pictureBoxNohacercaso.Visible = true;
+
+                    //Memento
+                    orig.setNombre(textBoxNombreModificar.Text);
+                    orig.setCorreo(textBoxCorreoModificar.Text);
+                    caretaker.save(orig);
                     break;
                 case 2: //Cerrar sesion
                     this.Hide();
@@ -231,7 +244,11 @@ namespace FacebookV1
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            if(textBoxContraseñaModificar.Text == contra && textBoxContraseñaNuevaModificar.Text == textBoxContraseñaConfModificar.Text)
+            //Memento
+            orig.setNombre(textBoxNombreModificar.Text);
+            orig.setCorreo(textBoxCorreoModificar.Text);
+            caretaker.save(orig);
+            if (textBoxContraseñaModificar.Text == contra && textBoxContraseñaNuevaModificar.Text == textBoxContraseñaConfModificar.Text)
             {   
                 if (_service.UpdatePerfil(idpersona, textBoxNombreModificar.Text, textBoxCorreoModificar.Text, textBoxContraseñaNuevaModificar.Text))
                 {
@@ -243,6 +260,7 @@ namespace FacebookV1
                 else
                 {
                     MessageBox.Show("Problemas al modificar tu perfil");
+
                 }
             }
             else
@@ -299,6 +317,26 @@ namespace FacebookV1
         private void labelMeGusta_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            //Memento
+            if(caretaker.mementoHistory.Count() > 0)
+            {
+                caretaker.revert(orig);
+                textBoxNombreModificar.Text = orig.getNombre();
+                textBoxCorreoModificar.Text = orig.getCorreo();
+                textBoxContraseñaModificar.UseSystemPasswordChar = false;
+                textBoxContraseñaModificar.ForeColor = System.Drawing.Color.Gray;
+                textBoxContraseñaModificar.Text = "Contraseña";
+                textBoxContraseñaNuevaModificar.UseSystemPasswordChar = false;
+                textBoxContraseñaNuevaModificar.ForeColor = System.Drawing.Color.Gray;
+                textBoxContraseñaNuevaModificar.Text = "Contraseña";
+                textBoxContraseñaConfModificar.UseSystemPasswordChar = false;
+                textBoxContraseñaConfModificar.ForeColor = System.Drawing.Color.Gray;
+                textBoxContraseñaConfModificar.Text = "Contraseña";
+            }
         }
     }
 }

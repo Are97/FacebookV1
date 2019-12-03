@@ -64,6 +64,7 @@
             this.buttonLikes2 = new System.Windows.Forms.Button();
             this.buttonComments1 = new System.Windows.Forms.Button();
             this.buttonComments2 = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPublicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNohacercaso)).BeginInit();
@@ -586,12 +587,33 @@
             this.buttonComments2.UseVisualStyleBackColor = true;
             this.buttonComments2.Visible = false;
             // 
+            // buttonReset
+            // 
+            this.buttonReset.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.buttonReset.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.buttonReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReset.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonReset.FlatAppearance.BorderSize = 0;
+            this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReset.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReset.ForeColor = System.Drawing.Color.White;
+            this.buttonReset.Location = new System.Drawing.Point(472, 64);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(72, 24);
+            this.buttonReset.TabIndex = 44;
+            this.buttonReset.Text = "Resetear";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Visible = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
             // FormPagPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FacebookV1.Properties.Resources.Timeline;
             this.ClientSize = new System.Drawing.Size(685, 736);
+            this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonComments2);
             this.Controls.Add(this.buttonComments1);
             this.Controls.Add(this.buttonLikes2);
@@ -678,5 +700,6 @@
         private System.Windows.Forms.Button buttonLikes2;
         private System.Windows.Forms.Button buttonComments1;
         private System.Windows.Forms.Button buttonComments2;
+        private System.Windows.Forms.Button buttonReset;
     }
 }
