@@ -721,5 +721,20 @@ namespace FacebookV1
             }
             
         }
+
+        private void buttonMeGusta2_Click(object sender, EventArgs e)
+        {
+            string postB = textBoxPost2.Text;
+            if (_service.DarLike1(postB))
+            {
+                int likes = System.Convert.ToInt32(labelMeGusta2.Text);
+                likes++;
+                labelMeGusta2.Text = likes.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo dar Like");
+            }
+        }
     }
 }

@@ -14,7 +14,20 @@ Utilizamos 3 tablas:
 		-idamigo y idpersona
 
 Procedimientos:
-	-
+	-AddPersona
+		-Toma todos los datos del registro y los agrega en la tabla persona, registro completo.
+	-UpdatePerfil
+		-Busca a la persona por correo y actualiza su nombre, correo y contraseña, según el usuario desee.
+	-Postear
+		-Agrega a la tabla Post, toda la informacion sobre el post; El id de la persona que lo publicó, url de la imagen, likes, comentarios.
+	-AddAmigo1
+		-Agrega el id del amigo a una tabla con tu id para identificar quienes son amigos.
+	-AmigosCount
+		-Procedimiento que te permite saber cuantos amigos tiene un usuario en especifico.
+	-DeleteAmigo
+		-Elimina a un amigo de tu lista de amigos.
+	-DarLike1
+		-Identifica el post al cual se le da el like e incrementa su valor de likes por 1.
 
 El proyecto se realizó en winForms, donde a cada componente (TextBox, Label, PictureBox, Button, etc), se le asignaba las propiedades adecuadas para
 su máximo parecido con la plataforma objetivo; esto, ademas del uso de imagenes como fondo, nos permite dar la ilusión de estar realmente en Facebook.

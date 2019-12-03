@@ -395,6 +395,7 @@
             this.buttonMeGusta2.TabIndex = 29;
             this.buttonMeGusta2.UseVisualStyleBackColor = true;
             this.buttonMeGusta2.Visible = false;
+            this.buttonMeGusta2.Click += new System.EventHandler(this.buttonMeGusta2_Click);
             // 
             // buttonComentar2
             // 
