@@ -76,8 +76,36 @@ namespace FacebookV1
 
         private void buttonPerfil_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Perfil");
+            string connectionString;
+            connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            ReadOrderDataPerfil(connectionString);
         }
+        private void ReadOrderDataPerfil(string connectionString)
+        {
+            string queryString =
+                "select top 1 * from persona where correo = '" + correo + "'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+                if (command.ExecuteScalar() != null)
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ReadSingleRow((IDataRecord)reader);
+                    }
+                    reader.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Problemas al acceder a tu perfil");
+                }
+
+            }
+        }
+
 
         private void buttonInicio_Click(object sender, EventArgs e)
         {
@@ -132,10 +160,69 @@ namespace FacebookV1
             
         }
         //Fin Basura
+        string nombreAmigo = "";
+        string apellidoAmigo = "";
+        string idamigo = "";
+        string correoAmigo = "";
+        string cumpleaños = "";
+        string sexoAmigo = "";
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Buscar");
+            string connectionString;
+            connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            ReadOrderDataBuscar(connectionString);
         }
+        private void ReadOrderDataBuscar(string connectionString)
+        {
+            string queryString =
+                "select top 1 * from persona where correo = '" + textBoxBuscar.Text + "'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+                if (command.ExecuteScalar() != null)
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ReadSingleRow((IDataRecord)reader);
+                    }
+                    reader.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no encontrado");
+                }
+
+            }
+        }
+        private void ReadSingleRow(IDataRecord record)
+        {
+            idamigo = String.Format("{0}", record[0]);
+            nombreAmigo = String.Format("{0}", record[1]) +" " + String.Format("{0}", record[2]);
+            correoAmigo = String.Format("{0}", record[3]);
+            cumpleaños = String.Format("{0}", record[5]) +"/"+ String.Format("{0}", record[6])+"/"+ String.Format("{0}", record[7]);
+            if(String.Format("{0}", record[8]) == "True")
+            {
+                sexoAmigo = "Hombre";
+            }
+            else
+            {
+                sexoAmigo = "Mujer";
+            }
+
+            //Aqui agregar la interfaz grafica
+            Console.WriteLine(idamigo);
+            Console.WriteLine(nombreAmigo);
+            Console.WriteLine(correoAmigo);
+            Console.WriteLine(cumpleaños);
+            Console.WriteLine(sexoAmigo);
+        }
+
+
+
+
 
         private void buttonIr_Click(object sender, EventArgs e)
         {   
