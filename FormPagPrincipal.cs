@@ -158,8 +158,13 @@ namespace FacebookV1
             //Strategy
             //TimelineMethod timelineMethod = new TimelineMethod();
             //timelineMethod.SetPrueba("Inicio");
-            //timelineMethod.SetTimelineStrategy(new Inicio());
+            timelineMethod.SetTimelineStrategy(new Inicio());
             //timelineMethod.Timeline();
+
+            string connectionString;
+            connectionString = "Data Source=PABLOARELLANO\\SQLEXPRESS;initial catalog=facebook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            ReadOrderDataInicio(connectionString);
+
 
             pictureBoxModificar.Visible = false;
             textBoxNombreModificar.Visible = false;
@@ -208,6 +213,130 @@ namespace FacebookV1
             textBox1.Text = "¿Qué estás pensando, " + nombre + "?";
             buttonPerfil.Text = nombre;
         }
+
+
+
+
+        private void ReadOrderDataInicio(string connectionString)
+        {
+            string queryString =
+                "select * from post join amigos on dbo.amigos.idamigo = dbo.post.idpersona join persona  on dbo.persona.idpersona = dbo.amigos.idamigo where dbo.amigos.idpersona = " + temp; //****************************************************************************************
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+                if (command.ExecuteScalar() != null)
+                {
+                    buttonMas.Visible = true;
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ReadSingleRowPostInicio((IDataRecord)reader);
+                    }
+                    reader.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Problemas al acceder al Muro");
+                }
+
+            }
+        }
+
+
+        private void ReadSingleRowPostInicio(IDataRecord record)
+        {
+            string nuevonombre = String.Format("{0}", record[9]) + String.Format("{0}", record[10]);
+            Publicacion post1 = new Publicacion(String.Format("{0}", record[0]), String.Format("{0}", record[1]), String.Format("{0}", record[2]), String.Format("{0}", record[3]), String.Format("{0}", record[4]), String.Format("{0}", record[5]), nuevonombre);
+            publicacions.Push(post1);
+
+            //Strategy
+            timelineMethod.SetPrueba(String.Format("{0}", record[0]), String.Format("{0}", record[1]), String.Format("{0}", record[2]), String.Format("{0}", record[3]), String.Format("{0}", record[4]), String.Format("{0}", record[5]), nuevonombre);
+            timelineMethod.Timeline();
+
+            if (labelNombre1.Text == "")
+            {
+                labelNombre1.Text = timelineMethod.getNombre(timelineMethod.getCount() - 1);
+                textBoxPost1.Text = timelineMethod.getPost(timelineMethod.getCount() - 1);
+                labelMeGusta1.Text = timelineMethod.getLikes(timelineMethod.getCount() - 1);
+                if (labelNombre1.Text != "")
+                {
+                    labelNombre1.Visible = true;
+                    labelComentarios1.Visible = true;
+                    labelMeGusta1.Visible = true;
+                    buttonMeGusta1.Visible = true;
+                    buttonComentar1.Visible = true;
+                    pictureBoxImg1.Visible = true;
+                    textBoxPost1.Visible = true;
+                    buttonLikes1.Visible = true;
+                    buttonComments1.Visible = true;
+                    buttonMas.Visible = false;
+                }
+                if (labelNombre2.Text != "")
+                {
+                    labelNombre2.Visible = true;
+                    labelComentarios2.Visible = true;
+                    labelMeGusta2.Visible = true;
+                    buttonMeGusta2.Visible = true;
+                    buttonComentar2.Visible = true;
+                    pictureBoxImg2.Visible = true;
+                    textBoxPost2.Visible = true;
+                    buttonLikes2.Visible = true;
+                    buttonComments2.Visible = true;
+                    buttonMas.Visible = true;
+                }
+                //buttonInicio_Click(sender, e);
+            }
+            else
+            {
+                buttonMas.Visible = true;
+                Post post = new Post();
+                post.nombre = labelNombre1.Text;
+                post.post = textBoxPost1.Text;
+                post.Likes = labelMeGusta1.Text;
+
+                Post post2 = post.Clone();
+                labelNombre2.Text = post2.nombre;
+                textBoxPost2.Text = post2.post;
+                labelMeGusta2.Text = post2.Likes;
+
+                labelNombre1.Text = timelineMethod.getNombre(timelineMethod.getCount() - 1);
+                textBoxPost1.Text = timelineMethod.getPost(timelineMethod.getCount() - 1);
+                labelMeGusta1.Text = timelineMethod.getLikes(timelineMethod.getCount() - 1);
+                if (labelNombre1.Text != "")
+                {
+                    labelNombre1.Visible = true;
+                    labelComentarios1.Visible = true;
+                    labelMeGusta1.Visible = true;
+                    buttonMeGusta1.Visible = true;
+                    buttonComentar1.Visible = true;
+                    pictureBoxImg1.Visible = true;
+                    textBoxPost1.Visible = true;
+                    buttonLikes1.Visible = true;
+                    buttonComments1.Visible = true;
+                }
+                if (labelNombre2.Text != "")
+                {
+                    labelNombre2.Visible = true;
+                    labelComentarios2.Visible = true;
+                    labelMeGusta2.Visible = true;
+                    buttonMeGusta2.Visible = true;
+                    buttonComentar2.Visible = true;
+                    pictureBoxImg2.Visible = true;
+                    textBoxPost2.Visible = true;
+                    buttonLikes2.Visible = true;
+                    buttonComments2.Visible = true;
+                }
+                //buttonInicio_Click(sender, e);
+            }
+            Console.WriteLine(record);
+        }
+
+
+
+
+
+
         //Basura
         private void textBoxBuscar_Enter(object sender, EventArgs e)
         {
@@ -384,9 +513,9 @@ namespace FacebookV1
             
             if (labelNombre1.Text == "")
             {
-                labelNombre1.Text = nombreAmigo;
-                textBoxPost1.Text = String.Format("{0}", record[2]);
-                labelMeGusta1.Text = String.Format("{0}", record[4]);
+                labelNombre1.Text = timelineMethod.getNombre(timelineMethod.getCount()-1);
+                textBoxPost1.Text = timelineMethod.getPost(timelineMethod.getCount()-1);
+                labelMeGusta1.Text = timelineMethod.getLikes(timelineMethod.getCount()-1);
                 if (labelNombre1.Text != "")
                 {
                     labelNombre1.Visible = true;
@@ -428,9 +557,9 @@ namespace FacebookV1
                 textBoxPost2.Text = post2.post;
                 labelMeGusta2.Text = post2.Likes;
 
-                labelNombre1.Text = nombreAmigo;
-                textBoxPost1.Text = String.Format("{0}", record[2]);
-                labelMeGusta1.Text = String.Format("{0}", record[4]);
+                labelNombre1.Text = timelineMethod.getNombre(timelineMethod.getCount() - 1);
+                textBoxPost1.Text = timelineMethod.getPost(timelineMethod.getCount() - 1);
+                labelMeGusta1.Text = timelineMethod.getLikes(timelineMethod.getCount() - 1);
                 if (labelNombre1.Text != "")
                 {
                     labelNombre1.Visible = true;
